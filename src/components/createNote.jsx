@@ -27,6 +27,11 @@ function makeChange(event){
 function submitData(event){
           proc.callData(data)
 
+          setData({
+            title: "",
+            content : "" 
+          })
+
     event.preventDefault()
 }
 
@@ -35,7 +40,7 @@ function submitData(event){
     <div>
       <form >
         <input name="title"onChange={makeChange} placeholder="Title" value={data.title} />
-        <textarea name="content" onChange={makeChange} value ={Note.content} placeholder="Take a note..." rows="3" />
+        <textarea name="content" onChange={makeChange} value ={data.content} placeholder="Take a note..." rows="3" />
         <button type="submit" onClick={submitData}>Add</button>
       </form>
     </div>
