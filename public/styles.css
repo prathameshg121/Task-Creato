@@ -9,10 +9,13 @@
   body {
     background: #eee;
     padding: 0 16px;
+    /* background-image: url(background-color: #00daf7; */
+    background-image: url("https://www.transparenttextures.com/patterns/3px-tile.png");
+    /* This is mostly intended for prototyping; please download the pattern and re-host for production environments. Thank you! */);
   }
   
   header {
-    background-color: #f5ba13;
+    background-color: #00daf7;;
     margin: auto -16px;
     padding: 16px 32px;
     box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.3);
@@ -67,7 +70,7 @@
     outline: none;
   }
   
-  form {
+  form.create-note {
     position: relative;
     width: 480px;
     margin: 30px auto 20px auto;
@@ -76,8 +79,8 @@
     border-radius: 7px;
     box-shadow: 0 1px 5px rgb(138, 137, 137);
   }
-  form input,
-  form textarea {
+  form.create-note input,
+  form.create-note textarea {
     width: 100%;
     border: none;
     padding: 4px;
@@ -86,7 +89,7 @@
     font-family: inherit;
     resize: none;
   }
-  form button {
+  form.create-note button {
     position: absolute;
     right: 18px;
     bottom: -18px;
@@ -101,98 +104,3 @@
     outline: none;
   }
   
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/* body{
-    margin-top: 0;
-    background-color: rgb(220, 186, 221);
-    
-}
-.nameOfApp{
-    font-family: 'Nunito', sans-serif;
-    text-shadow: 1px 1px 5px rgb(4, 92, 99);
-}
-header{
-  
-    background-color: rgb(64, 226, 247);
-    margin: auto -16px;
-
-    padding: 5px 15px;
-    box-shadow: 0 0 20px 0 rgb(4, 62, 85);
-
-    
-}
-
-footer{
-    position: absolute;
-    text-align: center;
-    bottom: 0;
-    width: 100%;
-    height: 3.5rem;
-}
-footer p{
-    color : gray;
-}
-.note{
-    box-shadow: 1px 3px 5px  gray;
-    border: cyan;
-    border-radius: 5.5px;
-    width: 240px;
-    float: left;
-    padding: 10px;
-    margin: 16px;
-    background-image: linear-gradient(rgb(187, 143, 236), rgb(240, 6, 189));
-}
-
-.note h1 {
-    font-size: 1.5rem;
-    margin-bottom: 7px;
-}
-
-.note p {
-    font-size: 1.1em;
-    margin-bottom: 10px;
-    white-space: pre-wrap;
-    word-wrap: break-word;
-} */
