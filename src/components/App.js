@@ -5,9 +5,8 @@ import Notes from "./Note.jsx"
 import Content from "./contentsArr.jsx"
 import MakeNote from "./createNote"
 
+   
 
-
-    
 function App() {
 
   const [data,setData]=useState([])
@@ -16,15 +15,24 @@ function getData(Ndata){
 console.log(Ndata)
 setData(prev=>{
   return [ ...prev,Ndata]
+})}
+
+function deleteItem(id){
+  console.log("delet is added")
+setData(prev =>{
+  return prev.filter((item,index) =>{
+    return index!=id
+  })
 })
-}
+
+  }
 
   return (
     <div>
       <Heading />
       <MakeNote callData={getData} />
-     { data.map( (getnote) =>{
-        return <Notes key={1} title={getnote.title} content={getnote.content}/>})
+     { data.map( (getnote,getindex) =>{
+        return <Notes key={getindex} id={getindex} title={getnote.title} content={getnote.content} onDelete={deleteItem}/>})
      }
       <Footer />
     </div>
