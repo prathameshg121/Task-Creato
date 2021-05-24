@@ -1,4 +1,4 @@
-import React from "react"
+import React, { useState } from "react"
 import Heading from "./header"
 import Footer from "./footer"
 import Notes from "./Note.jsx"
@@ -10,15 +10,22 @@ import MakeNote from "./createNote"
     
 function App() {
 
-function getData(data){
-console.log(data)
+  const [data,setData]=useState([])
+
+function getData(Ndata){
+console.log(Ndata)
+setData(prev=>{
+  return [ ...prev,Ndata]
+})
 }
 
   return (
     <div>
       <Heading />
       <MakeNote callData={getData} />
-      <Notes key={1} title="Note title" content="Note content" />
+     { data.map( (getnote) =>{
+        return <Notes key={1} title={getnote.title} content={getnote.content}/>})
+     }
       <Footer />
     </div>
   );
