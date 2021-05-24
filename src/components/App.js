@@ -6,12 +6,18 @@ import Content from "./contentsArr.jsx"
 import MakeNote from "./createNote"
 
 
+
     
 function App() {
+
+function getData(data){
+console.log(data)
+}
+
   return (
     <div>
       <Heading />
-      <MakeNote />
+      <MakeNote callData={getData} />
       <Notes key={1} title="Note title" content="Note content" />
       <Footer />
     </div>
