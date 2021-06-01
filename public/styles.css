@@ -10,7 +10,8 @@
     background: #eee;
     padding: 0 16px;
     /* background-image: url(background-color: #00daf7; */
-    background-image: url("https://www.transparenttextures.com/patterns/3px-tile.png");
+    background-color: #004f8c;
+background-image: url("https://www.transparenttextures.com/patterns/brick-wall.png");
     /* This is mostly intended for prototyping; please download the pattern and re-host for production environments. Thank you! */);
   }
   
@@ -106,4 +107,14 @@
   
   .Micon{
     color: #fff;
+  }
+  .clockArea{
+    position: relative;
+    color: black;
+    height: 150px;
+    width: 250px;
+    border-width: 4px;
+    border-style: solid;
+    border-radius: 5px;
+    border-color: #a0e0d6;
   }
