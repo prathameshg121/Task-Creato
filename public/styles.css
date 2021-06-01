@@ -106,15 +106,15 @@ background-image: url("https://www.transparenttextures.com/patterns/brick-wall.p
   }
   
   .Micon{
-    color: #fff;
+    color:#00daf7;
   }
   .clockArea{
     position: relative;
-    color: black;
-    height: 150px;
-    width: 250px;
-    border-width: 4px;
-    border-style: solid;
-    border-radius: 5px;
-    border-color: #a0e0d6;
+    width: 480px;
+    text-align: center;
+    margin: 30px auto 20px auto;
+    background: #fff;
+    padding: 15px;
+    border-radius: 7px;
+    box-shadow: 0 1px 10px rgb(24, 165, 184);
   }
