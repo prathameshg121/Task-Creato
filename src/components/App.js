@@ -4,6 +4,7 @@ import Footer from "./footer"
 import Notes from "./Note.jsx"
 import Content from "./contentsArr.jsx"
 import MakeNote from "./createNote"
+import Clock from "./clock.jsx";
 
    
 
@@ -30,6 +31,7 @@ setData(prev =>{
   return (
     <div>
       <Heading />
+      <Clock/>
       <MakeNote callData={getData} />
      { data.map( (getnote,getindex) =>{
         return <Notes key={getindex} id={getindex} title={getnote.title} content={getnote.content} onDelete={deleteItem}/>})
