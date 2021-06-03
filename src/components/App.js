@@ -6,6 +6,7 @@ import Content from "./contentsArr.jsx"
 import MakeNote from "./createNote"
 import Clock from "./clock.jsx";
 
+
    
 
 function App() {

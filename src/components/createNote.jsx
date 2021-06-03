@@ -49,7 +49,7 @@ function increaseSize(){
   return (
     <div>
       <form className="create-note">
-       { display?<input name="title"onChange={makeChange} placeholder="Headin" value={data.title} /> :""}
+       { display?<input name="title"onChange={makeChange} placeholder="Heading" value={data.title} /> :""}
         <textarea name="content" onClick={increaseSize} onChange={makeChange} value ={data.content} placeholder="Discription..." rows={rowValue} />
         <Zoom in= {display}>
         <Fab type="submit" onClick={submitData}><PostAddIcon/></Fab>

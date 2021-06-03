@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import AlarmAddTwoToneIcon from '@material-ui/icons/AlarmAddTwoTone';
 import BorderColorTwoToneIcon from '@material-ui/icons/BorderColorTwoTone';
-
+import Reminder from './reminder.jsx'
 
 
 
@@ -39,6 +39,7 @@ const days = ["Sundat","Monday","Tuesday","Wednusday","Thusday","Friday","Satday
        <h3>{date}  {monthNames[month]}  {year}</h3>
        <h3>{days[day]}</h3>
        <h1>{t}</h1>
+       <Reminder/>
        
 
 
