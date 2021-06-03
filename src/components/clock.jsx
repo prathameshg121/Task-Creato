@@ -2,11 +2,14 @@ import React, { useState } from 'react';
 import AlarmAddTwoToneIcon from '@material-ui/icons/AlarmAddTwoTone';
 import BorderColorTwoToneIcon from '@material-ui/icons/BorderColorTwoTone';
 import Reminder from './reminder.jsx'
+import AccessAlarmsIcon from '@material-ui/icons/AccessAlarms';
+import TodayIcon from '@material-ui/icons/Today';
 
 
 
 function Clock(){
     const [display,setDisplay] = useState(false)
+    const [displayDate, setDisplayDate] =useState(false)
     let time = new Date().toLocaleTimeString();
     var [t, refresh] = useState(time);
     function getTime() {
@@ -32,14 +35,21 @@ function Clock(){
 ];
 const days = ["Sundat","Monday","Tuesday","Wednusday","Thusday","Friday","Satday"];
 
-
+function showAlarm(){
+  setDisplay(true)
+}
+function showDate(){
+  setDisplayDate(true)
+}
   
       
     return <div className="clockArea" >
-       <h3>{date}  {monthNames[month]}  {year}</h3>
-       <h3>{days[day]}</h3>
-       <h1>{t}</h1>
-       <Reminder/>
+       <TodayIcon onClick={showDate}/>
+       {displayDate?<h3>{date}  {monthNames[month]}  {year} {days[day]}</h3>:""}
+       
+       <hr></hr>
+       <h1>{t} <AccessAlarmsIcon onClick={showAlarm}/></h1>
+       {display?<Reminder/>:""}
        
 
 
