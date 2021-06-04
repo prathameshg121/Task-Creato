@@ -4,6 +4,7 @@ import BorderColorTwoToneIcon from '@material-ui/icons/BorderColorTwoTone';
 import Reminder from './reminder.jsx'
 import AccessAlarmsIcon from '@material-ui/icons/AccessAlarms';
 import TodayIcon from '@material-ui/icons/Today';
+import AlarmOffIcon from '@material-ui/icons/AlarmOff';
 
 
 
@@ -36,22 +37,20 @@ function Clock(){
 const days = ["Sundat","Monday","Tuesday","Wednusday","Thusday","Friday","Satday"];
 
 function showAlarm(){
-  setDisplay(true)
+  setDisplay(!display)
 }
 function showDate(){
-  setDisplayDate(true)
+  setDisplayDate(!displayDate)
 }
   
       
     return <div className="clockArea" >
-       <TodayIcon onClick={showDate}/>
+       <TodayIcon color="primary"  onClick={showDate}/>
        {displayDate?<h3>{date}  {monthNames[month]}  {year} {days[day]}</h3>:""}
        
        <hr></hr>
-       <h1>{t} <AccessAlarmsIcon onClick={showAlarm}/></h1>
+       <h1>{t} {display ?   <AlarmOffIcon style={{ color: "#FF0000" }} onClick={showAlarm}/> :<AccessAlarmsIcon color="primary" onClick={showAlarm}/>}</h1>
        {display?<Reminder/>:""}
-       
-
 
     </div>
 }

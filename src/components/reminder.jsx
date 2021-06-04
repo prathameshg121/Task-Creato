@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import useSound from 'use-sound';
-import link from './sound.mp3';
+import link from '../music/sound.mp3';
 import Button from '@material-ui/core/Button';
 import ButtonGroup from '@material-ui/core/ButtonGroup';
 import SnoozeIcon from '@material-ui/icons/Snooze';
@@ -43,10 +43,20 @@ function Reminder ()
        console.log("set time ",alarm.getTime() );
        console.log("current time", current.getTime())
        console.log("difference ", alarm.getTime() - current.getTime())
-       setTimeout(function initAlarm(){
-        console.log(diff)
-        play()
-    } , difference)
+       if(isNaN(difference)){
+            console.log("IT not valid input")
+       }
+       else if(difference<0){
+            console.log("Time is alrey passed")
+       }
+       else{
+        setTimeout(function initAlarm(){
+            console.log(diff)
+            play()
+        } , difference)
+
+       }
+      
    
     }
     
@@ -67,7 +77,6 @@ function Reminder ()
     <button onClick={set}>Set</button>
     <p>Alarm of {data} is set!</p>
     <ButtonGroup size="large" color="primary" aria-label="large outlined primary button group">
-  <Button><AlarmOffIcon/></Button>
   <Button> <MusicNoteIcon/></Button>
   <input type="file" accept=".mp3,audio*" onChange={getAddress}/>
   <Button onClic={setTime}><SnoozeIcon/></Button>
