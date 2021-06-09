@@ -22,7 +22,7 @@ background-image: url("https://www.transparenttextures.com/patterns/brick-wall.p
     box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.3);
   }
   
-  header h1 {
+  header li {
     color: #fff;
     font-family: "McLaren", cursive;
     font-weight: 200;
@@ -38,6 +38,12 @@ background-image: url("https://www.transparenttextures.com/patterns/brick-wall.p
   
   footer p {
     color: #ccc;
+  }
+  ul{
+    list-style-type: none;
+  }
+  .linav{
+    display: inline;
   }
   .note {
     background: #fff;
