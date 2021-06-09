@@ -28,7 +28,7 @@ function Heading(){
 
     <Router>
     <div>
-        <Navbar>
+        <nav>
         <Zoom in = "true"><header className="nameOfApp">
      <ul>
          <li className="linav"><Link   to="/login"><h3>Signin</h3></Link></li>
@@ -40,7 +40,7 @@ function Heading(){
         
 
         </header></Zoom>
-        </Navbar>
+        </nav>
         <switch>
             <Route path="/login">
                 <Login/>

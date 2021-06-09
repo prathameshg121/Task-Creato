@@ -26,6 +26,7 @@ background-image: url("https://www.transparenttextures.com/patterns/brick-wall.p
     color: #fff;
     font-family: "McLaren", cursive;
     font-weight: 200;
+  
   }
   
   footer {
@@ -41,9 +42,13 @@ background-image: url("https://www.transparenttextures.com/patterns/brick-wall.p
   }
   ul{
     list-style-type: none;
+  margin: 0;
+  padding: 0;
+
   }
   .linav{
     display: inline;
+    
   }
   .note {
     background: #fff;
@@ -123,4 +128,24 @@ background-image: url("https://www.transparenttextures.com/patterns/brick-wall.p
     padding: 15px;
     border-radius: 7px;
     box-shadow: 0 1px 10px rgb(24, 165, 184);
+  }
+  .inputeArea{
+    position: relative;
+    width: 480px;
+    text-align: center;
+    margin: 30px auto 20px auto;
+    background: #fff;
+    padding: 15px;
+    border-radius: 7px;
+    box-shadow: 0 1px 10px rgb(24, 165, 184);
+  }
+
+  .inputeplace{
+    position: relative;
+    width: 450px;
+    margin: 30px auto 5px auto;
+    background: #fff;
+    padding: 15px;
+    border-radius: 7px;
+    box-shadow: 0 0px 0px rgb(32, 165, 165);
   }
