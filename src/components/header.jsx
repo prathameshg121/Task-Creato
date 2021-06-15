@@ -40,7 +40,7 @@ function Heading(){
         <Zoom in = "true"><header className="nameOfApp">
         
     
-        {!isLogin ? <ul >
+        {isLogin ? <ul >
             <li className="poductList"><Link to ="/notes"><Add/> </Link></li>
          <li className="poductList"><Link to = "/clock">  <AddAlertOutlinedIcon/> </Link>  </li>
         </ul> :
