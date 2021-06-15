@@ -48,6 +48,7 @@ function increaseSize(){
 
   return (
     <div>
+    <h3 >Add Note</h3>
       <form className="create-note">
        { display?<input name="title"onChange={makeChange} placeholder="Heading" value={data.title} /> :""}
         <textarea name="content" onClick={increaseSize} onChange={makeChange} value ={data.content} placeholder="Discription..." rows={rowValue} />
