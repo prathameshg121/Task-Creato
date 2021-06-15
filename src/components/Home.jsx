@@ -1,12 +1,15 @@
 import React from 'react'
 import Clock from './clock'
 import NoteArea from './notesArea'
+import Heading from "./header"
 
 export default function Home() {
     return (
         <div>
-             <Clock/>
-            <NoteArea/>
+
+         
+          <p>hello</p>
+       
         </div>
     )
 }

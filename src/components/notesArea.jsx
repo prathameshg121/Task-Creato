@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import MakeNote from "./createNote"
 import Notes from "./Note"
+import { AddCircle , AddCircleOutline } from '@material-ui/icons'
 
  function NotesArea() {
     const [data,setData]=useState([])
@@ -21,7 +22,8 @@ import Notes from "./Note"
     
       }
     return (
-        <div>
+        <div className="notesAreaDiv">
+      
       <MakeNote callData={getData} />
      { data.map( (getnote,getindex) =>{
         return <Notes key={getindex} id={getindex} title={getnote.title} content={getnote.content} onDelete={deleteItem}/>})
