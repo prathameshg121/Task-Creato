@@ -3,11 +3,13 @@ import MakeNote from "./createNote"
 import Notes from "./Note"
 import { AddCircle , AddCircleOutline } from '@material-ui/icons'
 
- function NotesArea() {
+ function NotesArea(proc) {
+     proc.checkLogin(true);
     const [data,setData]=useState([])
 
     function getData(Ndata){
-    console.log(Ndata)
+  
+    console.log(Ndata.reminder);
     setData(prev=>{
       return [ ...prev,Ndata]
     })}
@@ -26,7 +28,7 @@ import { AddCircle , AddCircleOutline } from '@material-ui/icons'
       
       <MakeNote callData={getData} />
      { data.map( (getnote,getindex) =>{
-        return <Notes key={getindex} id={getindex} title={getnote.title} content={getnote.content} onDelete={deleteItem}/>})
+        return <Notes key={getindex} id={getindex} title={getnote.title} content={getnote.content} reminder={getnote.reminder} onDelete={deleteItem}/>})
      }
         </div>
     )

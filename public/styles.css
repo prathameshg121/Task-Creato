@@ -31,6 +31,7 @@
   
   footer {
     position: absolute;
+    margin-bottom: 15px;
     text-align: center;
     bottom: 0;
     width: 100%;
@@ -74,7 +75,7 @@
   }
   
   .note button {
-    position: relative;
+    position: absolute;
     float: right;
     margin-right: 10px;
     color: #f5ba13;
@@ -108,14 +109,13 @@
     resize: none;
   }
   form.create-note button {
-    position: absolute;
-    right: 18px;
-    bottom: -18px;
+    bottom: -30px;
     background: #f5ba13;
     color: #fff;
     border: none;
     border-radius: 50%;
     width: 36px;
+    margin-left: 15px;
     height: 36px;
     box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
     cursor: pointer;
@@ -183,4 +183,10 @@
   .poductList{
     display: inline-block;
     margin: 0 20px;
+  }
+
+  .fabarea{
+    margin-left: 10px;
+    color: black;
+
   }

@@ -9,7 +9,7 @@ import MusicNoteIcon from '@material-ui/icons/MusicNote';
 
 
 
-function Reminder ()
+function Reminder ( proc)
 {
     // var data;
     const [ data, setData] = useState("")
@@ -27,7 +27,7 @@ function Reminder ()
         console.log(data) 
         return;
     }
-    function set(){
+    function set(event){
     //     if(isNaN(data)){
     //         alert('Invalid data')
     //    } 
@@ -69,8 +69,8 @@ function Reminder ()
         } , difference)
 
        }
-      
-   
+      proc.getTimeData(data);
+       event.preventDefault();
     }
 
     //Notification
@@ -102,11 +102,11 @@ function Reminder ()
     <input type="datetime-local" id="alarm" onChange={setAlarm}></input>
     <button onClick={set}>Set</button>
     <p>Alarm of {data} is set!</p>
-    <ButtonGroup size="large" color="primary" aria-label="large outlined primary button group">
+    {/* <ButtonGroup size="large" color="primary" aria-label="large outlined primary button group">
   <Button> <MusicNoteIcon/></Button>
   <input type="file" accept=".mp3,audio*" onChange={getAddress}/>
   <Button onClic={setTime}><SnoozeIcon/></Button>
-</ButtonGroup>
+</ButtonGroup> */}
     </div>
 
  

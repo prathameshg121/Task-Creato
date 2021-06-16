@@ -61,13 +61,13 @@ function Heading(){
                 <Signup/>
             </Route>
             <Route path="/clock">
-                <Clock/>
+                <Clock  checkLogin = {display}/>
             </Route>
             <Route path="/notes">
-                <NotesArea/>
+                <NotesArea checkLogin = {display}/>
             </Route>
             <Route path = "/home">
-                <Home/>
+                <Home checkLogin = {display}/>
             </Route>
             
         </switch>
