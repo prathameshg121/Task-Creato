@@ -14,9 +14,9 @@
   }
   
   header {
-    background-color: #50ebff;;
+    background-color: #3ff8e9;;
     margin: auto -16px;
-    padding: 5px 5px 5px 5px;
+    padding: 0px 5px 4px 5px;
     box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.3);
     
   }
@@ -170,11 +170,21 @@
     color: wheat;
     text-align: center;
   }
-  .addLogo{
-    color: violet;
-    display: inline-block;
-    position: relative;
-  }
+ .logimag{
+   width: 40px;
+   height: 40px;
+   margin-left: 40px;
+   margin-top : 0px;
+   float: left;
+   box-shadow: black;
+   border: solid transparent;
+   border-radius: 50%;
+   border-width: 2px;
+   background: linear-gradient(180deg,#ffffff 1%, #ffffff 200% );
+   
+ }
+
+ 
 
   .notesAreaDiv{
     align-items: center;
@@ -182,6 +192,7 @@
 
   .poductList{
     display: inline-block;
+    padding-top: 5px;
     margin: 0 20px;
   }
 
