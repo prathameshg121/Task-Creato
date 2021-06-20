@@ -50,6 +50,7 @@ function Reminder ( proc)
             console.log("Time is alrey passed")
        }
        else{
+           
         setTimeout(function initAlarm(){
             console.log(diff)
             play()
