@@ -12,23 +12,7 @@ import NotesArea from "./notesArea"
 
 function App() {
 
-  const [data,setData]=useState([])
 
-function getData(Ndata){
-console.log(Ndata)
-setData(prev=>{
-  return [ ...prev,Ndata]
-})}
-
-function deleteItem(id){
-  console.log("delet is added")
-setData(prev =>{
-  return prev.filter((item,index) =>{
-    return index!=id
-  })
-})
-
-  }
 
   return (
     <div>

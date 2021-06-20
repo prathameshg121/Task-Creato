@@ -4,9 +4,13 @@ import { BrowserRouter as Router , Switch,Route , Link , useHistory} from 'react
 import Home from './Home';
 import Axios from 'axios';
 
-export default function Login() {
+export default function Login(proc) {
     const [islogin, setlogin] = useState(false);
-    const history = useHistory();
+    const histor = useHistory();
+    function goToHome (){
+        proc.checkLogin(true);
+        histor.push("./home")
+    }
 
     const [data, setData] =useState({
         email: "",
@@ -78,9 +82,9 @@ export default function Login() {
            
             <div className="inputeArea">
             <h2>Login</h2>
-            <input className="inputeplace" type="email" name="email" placeholder="email" onChange={changehandler}></input>
-           <input className="inputeplace" type="password" name="password" placeholder="password" required="required" onChange={changehandler} ></input> 
-          <Button type="submit" variant="contained" color="primary" onClick={submitData} >Login</Button>
+            <input className="inputeplace" type="email" placeholder="email" ></input>
+           <input className="inputeplace" type="password" placeholder="password" required="required"  ></input> 
+          <Button  type="submit" variant="contained" color="primary" onClick={ goToHome}  >Login</Button>
             </div>
         </form>    
         </div>

@@ -2,13 +2,17 @@ import React, { useState } from 'react'
 import MakeNote from "./createNote"
 import Notes from "./Note"
 import Axios from 'axios';
+import { AddCircle , AddCircleOutline } from '@material-ui/icons'
 
- function NotesArea() {
+ function NotesArea(proc) {
+     proc.checkLogin(true);
     const [data,setData]=useState([])
 
     function getData(Ndata){
     console.log("bew data:"+Ndata);
 
+  
+    console.log(Ndata.reminder);
     setData(prev=>{
       
       Axios.post("/notes/create", Ndata).then(data => {
@@ -30,10 +34,11 @@ import Axios from 'axios';
     
       }
     return (
-        <div>
+        <div className="notesAreaDiv">
+      
       <MakeNote callData={getData} />
      { data.map( (getnote,getindex) =>{
-        return <Notes key={getindex} id={getindex} title={getnote.title} content={getnote.content} onDelete={deleteItem}/>})
+        return <Notes key={getindex} id={getindex} title={getnote.title} content={getnote.content} reminder={getnote.reminder} onDelete={deleteItem}/>})
      }
         </div>
     )
