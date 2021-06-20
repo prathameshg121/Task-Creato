@@ -8,7 +8,8 @@ import AlarmOffIcon from '@material-ui/icons/AlarmOff';
 
 
 
-function Clock(){
+function Clock(proc){
+  proc.checkLogin(true);
     const [display,setDisplay] = useState(false)
     const [displayDate, setDisplayDate] =useState(false)
     let time = new Date().toLocaleTimeString();
@@ -45,6 +46,7 @@ function showDate(){
   
       
     return <div className="clockArea" >
+    
        <TodayIcon color="primary"  onClick={showDate}/>
        {displayDate?<h3>{date}  {monthNames[month]}  {year} {days[day]}</h3>:""}
        

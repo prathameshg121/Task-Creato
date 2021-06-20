@@ -2,41 +2,21 @@ import React, { useState } from "react"
 import Heading from "./header"
 import Footer from "./footer"
 import Notes from "./Note.jsx"
-import Content from "./contentsArr.jsx"
 import MakeNote from "./createNote"
-import Clock from "./clock.jsx";
+import Signup from "./signup"
+import NotesArea from "./notesArea"
+
 
 
    
 
 function App() {
 
-  const [data,setData]=useState([])
 
-function getData(Ndata){
-console.log(Ndata)
-setData(prev=>{
-  return [ ...prev,Ndata]
-})}
-
-function deleteItem(id){
-  console.log("delet is added")
-setData(prev =>{
-  return prev.filter((item,index) =>{
-    return index!=id
-  })
-})
-
-  }
 
   return (
     <div>
       <Heading />
-      <Clock/>
-      <MakeNote callData={getData} />
-     { data.map( (getnote,getindex) =>{
-        return <Notes key={getindex} id={getindex} title={getnote.title} content={getnote.content} onDelete={deleteItem}/>})
-     }
       <Footer />
     </div>
   );

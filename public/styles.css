@@ -8,28 +8,30 @@
   }
   body {
     background: #eee;
-    padding: 0 16px;
-    /* background-image: url(background-color: #00daf7; */
-    background-color: #004f8c;
-background-image: url("https://www.transparenttextures.com/patterns/brick-wall.png");
-    /* This is mostly intended for prototyping; please download the pattern and re-host for production environments. Thank you! */);
+    background-color: #c7fff6;
+    background-image: url("https://www.transparenttextures.com/patterns/candyhole.png");
+    /* This is mostly intended for prototyping; please download the pattern and re-host for production environments. Thank you! */
   }
   
   header {
-    background-color: #00daf7;;
+    background-color: #3ff8e9;;
     margin: auto -16px;
-    padding: 16px 32px;
+    padding: 0px 5px 4px 5px;
     box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.3);
+    
   }
   
-  header h1 {
+  header li {
+    display: inline;
     color: #fff;
     font-family: "McLaren", cursive;
     font-weight: 200;
+ 
   }
   
   footer {
     position: absolute;
+    margin-bottom: 15px;
     text-align: center;
     bottom: 0;
     width: 100%;
@@ -38,6 +40,19 @@ background-image: url("https://www.transparenttextures.com/patterns/brick-wall.p
   
   footer p {
     color: #ccc;
+  }
+  ul {
+    list-style-type: none;
+   margin-right: 150px;
+   padding: 15px;
+   text-align: right;
+  }
+
+  .linav{
+    display: inline-block;
+    margin: 0px 15px;
+  
+  
   }
   .note {
     background: #fff;
@@ -60,7 +75,7 @@ background-image: url("https://www.transparenttextures.com/patterns/brick-wall.p
   }
   
   .note button {
-    position: relative;
+    position: absolute;
     float: right;
     margin-right: 10px;
     color: #f5ba13;
@@ -70,11 +85,14 @@ background-image: url("https://www.transparenttextures.com/patterns/brick-wall.p
     cursor: pointer;
     outline: none;
   }
-  
+  .notesAreaDiv{
+    text-align: center;
+    margin-top: 30px;
+  }
   form.create-note {
     position: relative;
     width: 480px;
-    margin: 30px auto 20px auto;
+    margin: 0 auto 20px auto;
     background: #fff;
     padding: 15px;
     border-radius: 7px;
@@ -91,14 +109,13 @@ background-image: url("https://www.transparenttextures.com/patterns/brick-wall.p
     resize: none;
   }
   form.create-note button {
-    position: absolute;
-    right: 18px;
-    bottom: -18px;
+    bottom: -30px;
     background: #f5ba13;
     color: #fff;
     border: none;
     border-radius: 50%;
     width: 36px;
+    margin-left: 15px;
     height: 36px;
     box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
     cursor: pointer;
@@ -116,5 +133,71 @@ background-image: url("https://www.transparenttextures.com/patterns/brick-wall.p
     background: #fff;
     padding: 15px;
     border-radius: 7px;
+    box-shadow: 0 1px 10px rgb(90, 182, 194);
+  }
+  .inputeArea{
+    position: relative;
+    width: 480px;
+    text-align: center;
+    margin: 30px auto 20px auto;
+    background: #fff;
+    padding: 15px;
+    border-radius: 7px;
     box-shadow: 0 1px 10px rgb(24, 165, 184);
+  }
+
+  .inputeplace{
+    position: relative;
+    width: 450px;
+    margin: 30px auto 5px auto;
+    background: #fff;
+    padding: 15px;
+    border-radius: 7px;
+    box-shadow: 0 0px 0px rgb(32, 165, 165);
+  }
+
+ 
+  img{
+    width: 50px;
+    height: 50px;
+    margin: 0;
+    padding-bottom: 0;
+    
+    display: inline-block;
+  }
+  .addPara{
+    
+    color: wheat;
+    text-align: center;
+  }
+ .logimag{
+   width: 40px;
+   height: 40px;
+   margin-left: 40px;
+   margin-top : 0px;
+   float: left;
+   box-shadow: black;
+   border: solid transparent;
+   border-radius: 50%;
+   border-width: 2px;
+   background: linear-gradient(180deg,#ffffff 1%, #ffffff 200% );
+   
+ }
+
+ 
+
+  .notesAreaDiv{
+    align-items: center;
+  }
+
+  .poductList{
+    display: inline-block;
+    padding-top: 5px;
+    margin: 0 20px;
+  }
+
+  .fabarea{
+    margin-left: 10px;
+    color: black;
+
   }

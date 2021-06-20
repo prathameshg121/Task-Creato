@@ -14,6 +14,7 @@ function handelDelete(){
     <div className="note">
       <h1>{prop.title}</h1>
       <p>{prop.content}</p>
+      <p>{prop.reminder}</p>
       <button onClick={handelDelete}>
           <DeleteIcon/>
       </button>
