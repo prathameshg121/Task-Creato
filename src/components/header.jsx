@@ -9,7 +9,7 @@ import {
     Link
   } from "react-router-dom";
 import Login from "./login";
-import Signup from "./signup";
+import {Signup} from "./signup";
 import Clock from "./clock";
 import NotesArea from "./notesArea";
 import {Card, Form,Button,Navbar} from 'react-bootstrap'

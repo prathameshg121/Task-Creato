@@ -1,13 +1,22 @@
 import React, { useState } from 'react'
 import MakeNote from "./createNote"
 import Notes from "./Note"
+import Axios from 'axios';
 
  function NotesArea() {
     const [data,setData]=useState([])
 
     function getData(Ndata){
-    console.log(Ndata)
+    console.log("bew data:"+Ndata);
+
     setData(prev=>{
+      
+      Axios.post("/notes/create", Ndata).then(data => {
+        console.log("data:"+data);
+    }).catch(e => {
+           console.log("error:");
+           console.log(e);
+        });
       return [ ...prev,Ndata]
     })}
     

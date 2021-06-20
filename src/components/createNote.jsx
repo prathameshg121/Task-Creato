@@ -13,7 +13,7 @@ const [data, setData] =useState({
    title: "",
    content : ""
 
-})
+});
 
 const [display,setDisplay] = useState(false)
 const [rowValue, setRowValue] = useState(1)
