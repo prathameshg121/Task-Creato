@@ -34,7 +34,7 @@ export default function Login(proc) {
          .then(response => {
              console.log(response);
              console.log('login sucessfull');
-             history.push('/home');
+            //  history.push('/home');
             //  auth.login(response.data.userId, response.data.token);
             const token  = response.data.token;
             console.log('token'+response.data.token + 'roken'+ token);
