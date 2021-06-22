@@ -5,7 +5,7 @@ import axios from 'axios';
 
 axios.defaults.baseURL = 'http://localhost:8082/api';
      
-    let token =  JSON.parse(localStorage.getItem("jwtToken")) || '';
+    let token =  localStorage.getItem("jwtToken") || '';
     
     
     //axios.defaults.headers.common['Authorization'] = {'Authorization': `Bearer ${token}`};

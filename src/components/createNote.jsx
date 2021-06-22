@@ -5,6 +5,7 @@ import Fab from '@material-ui/core/Fab';
 import Zoom from '@material-ui/core/Zoom';
 import AddAlertOutlinedIcon from '@material-ui/icons/AddAlertOutlined';
 import Reminder from "./reminder";
+import Axios from 'axios';
 
 
 function CreateArea(proc) {
@@ -35,14 +36,21 @@ function makeChange(event){
 }
 
 function submitData(event){
- 
-          proc.callData(data)
+  Axios.post("/notes/create", data).then(resdata => {
+    console.log("data:"+JSON.stringify(resdata.data.note._doc));
+    proc.callData(resdata.data.note._doc);
+  }).catch(e => {
+       console.log("error:");
+       console.log(e);
+    });
 
-          setData({
-            title: "",
-            content : "" ,
-            reminder : ""
-          })
+    
+
+    setData({
+      title: "",
+      content : "" ,
+      reminder : ""
+    })
 
     event.preventDefault()
 }

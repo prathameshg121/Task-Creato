@@ -1,4 +1,4 @@
-import React,{useState} from 'react'
+import React,{useState, useEffect} from 'react'
 import {Button} from '@material-ui/core';
 import { BrowserRouter as Router , Switch,Route , Link , useHistory} from 'react-router-dom';
 import Home from './Home';
@@ -7,11 +7,17 @@ import Axios from 'axios';
 export default function Login(proc) {
     const [islogin, setlogin] = useState(false);
     const histor = useHistory();
-    function goToHome (){
-        proc.checkLogin(true);
-        histor.push("./home")
-    }
 
+    useEffect(()=>{
+        if(localStorage.getItem("jwtToken")){
+            setlogin((prev)=>{
+                return true;
+            });
+            histor.push("./notes");
+        }
+        proc.checkLogin(islogin);
+    },islogin);
+    
     const [data, setData] =useState({
         email: "",
         password : ""
@@ -32,14 +38,17 @@ export default function Login(proc) {
          event.preventDefault();
          Axios.post('/auth/login', data)
          .then(response => {
-             console.log(response);
+             console.log('Response :'+JSON.stringify(response));
              console.log('login sucessfull');
-             history.push('/home');
+             histor.push('/home');
             //  auth.login(response.data.userId, response.data.token);
             const token  = response.data.token;
             console.log('token'+response.data.token + 'roken'+ token);
             localStorage.setItem("jwtToken", token);
             setAuthToken(token);
+            setlogin((prev)=>{
+                return true;
+            })
         //  }).then(data => {
         //      let profile = data.data.profile.username
         //      localStorage.setItem(
@@ -57,23 +66,12 @@ export default function Login(proc) {
      function changehandler(event){
         let nam = event.target.name;
         let val = event.target.value;
-        switch(nam){
-            case 'email': 
-                setData({
-                    email:val,
-                    password: data.password
-                });
-                break;
-            case 'password': 
-                setData({
-                    email:data.email,
-                    password:val
-                });
-                break;
-            default:
-                 break;
-                
-        }
+        setData(predata=>{
+            return{
+                ...predata,
+                [nam]:val
+            }
+        })
 
      }
     return (
@@ -82,9 +80,9 @@ export default function Login(proc) {
            
             <div className="inputeArea">
             <h2>Login</h2>
-            <input className="inputeplace" type="email" placeholder="email" ></input>
-           <input className="inputeplace" type="password" placeholder="password" required="required"  ></input> 
-          <Button  type="submit" variant="contained" color="primary" onClick={ goToHome}  >Login</Button>
+            <input className="inputeplace" type="email" name='email' value={data.email} placeholder="email" onChange={changehandler} ></input>
+           <input className="inputeplace" type="password" placeholder="password" required="required" name='password' value={data.password} onChange={changehandler} ></input> 
+          <Button  type="submit" variant="contained" color="primary" onClick={ submitData }  >Login</Button>
             </div>
         </form>    
         </div>

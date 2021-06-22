@@ -75,6 +75,9 @@ function Heading(){
             <Route path = "/profile">
                 <Profile checkLogin = {display}/>
             </Route>
+            <Route path = "/">
+                <Home checkLogin = {display}/>
+            </Route>
             
         </switch>
     </div>

@@ -65,12 +65,12 @@ const checkAuth = require("../middlewares/check-auth");
 router.post("/create", checkAuth, (req, res, next) => {
         console.log("create note data"+req.body)
         // const url = req.protocol + "://" + req.get("host")
-        // console.log(url)
+         console.log("Userid : "+ JSON.stringify(req.userData));
         const note = new Note({
             title: req.body.title,
             content: req.body.content,
             creator: req.userData.userId,
-            date: Date.parse(req.body.date),
+            // date: Date.parse(req.body.reminder),
         })
         console.log(note);
         note.save().
@@ -132,8 +132,10 @@ router.put("/:id", checkAuth, (req, res, next) => {
 router.get("/mynote", 
 checkAuth,
 (req, res, next) => {
+  console.log("Reques"+req);
     Note.find({creator: req.userData.userId}).then(note => {
       if (note) {
+        console.log('Response note : '+note);
         res.status(200).json({
             message: "Notes fetched successfully!",
             notes: note
