@@ -1,5 +1,5 @@
 const router = require("express").Router();
-const Note = require("../models/note.model");
+const Note = require("../models/encryptnote.model");
 const checkAuth = require("../middlewares/check-auth");
 
 
@@ -57,22 +57,17 @@ const checkAuth = require("../middlewares/check-auth");
 
 
 
-
-
-
-
-
 router.post("/create", checkAuth, (req, res, next) => {
-        // console.log("create note data"+req.body)
+        console.log("create note data"+req.body)
         // const url = req.protocol + "://" + req.get("host")
-        //  console.log("Userid : "+ JSON.stringify(req.userData));
+         console.log("Userid : "+ JSON.stringify(req.userData));
         const note = new Note({
             title: req.body.title,
             content: req.body.content,
             creator: req.userData.userId,
             // date: Date.parse(req.body.reminder),
         })
-        // console.log(note);
+        console.log(note);
         note.save().
             then(note => {
                 if(note){
@@ -104,14 +99,14 @@ router.post("/create", checkAuth, (req, res, next) => {
    
 router.put("/:id", checkAuth, (req, res, next) => {
         
-    // console.log("put method : "+req.body)
+    console.log("put method : "+req.body)
         const note = new Note({
             _id: req.body.id,
             title: req.body.title,
             content: req.body.content,
             creator: req.userData.userId
         });
-        // console.log("Edited Note : ",note);
+        console.log("Edited Note : ",note);
         Note.updateOne(
             { _id: req.params.id, creator: req.userData.userId },
             note
@@ -132,10 +127,10 @@ router.put("/:id", checkAuth, (req, res, next) => {
 router.get("/mynote", 
 checkAuth,
 (req, res, next) => {
-  // console.log("Reques"+req);
+  console.log("Reques"+req);
     Note.find({creator: req.userData.userId}).then(note => {
       if (note) {
-        // console.log('Response note : '+note);
+        console.log('Response note : '+note);
         res.status(200).json({
             message: "Notes fetched successfully!",
             notes: note

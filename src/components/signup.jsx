@@ -11,6 +11,7 @@ export class Signup extends Component {
     // var history = useHistory();
     constructor(props) {
         super(props)
+    
     this.state = {
         user: {
             email: '',
@@ -75,9 +76,8 @@ export class Signup extends Component {
                 isloading: true
             }))
             Axios.post('/auth/signup', this.state.user).then(response => {
-                this.setState(pre => ({
-                    isloading: false
-                }))
+                this.props.history.push('/signin');
+
             })
                 .catch(e => {
                     this.setState({ error: true });
