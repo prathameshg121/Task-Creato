@@ -45,6 +45,7 @@ function Heading(){
             <li className="poductList"><Link to ="/notes"><Add/> </Link></li>
          <li className="poductList"><Link to = "/clock">  <AddAlertOutlinedIcon/> </Link>  </li>
          <li className="poductList"><Link to = "/profile">  <AccountCircleOutlinedIcon/> </Link>  </li>
+         
         </ul> :
           <ul> 
           <li><img className="logimag" src={imageLogo}></img></li>
@@ -74,9 +75,6 @@ function Heading(){
             </Route>
             <Route path = "/profile">
                 <Profile checkLogin = {display}/>
-            </Route>
-            <Route path = "/">
-                <Home checkLogin = {display}/>
             </Route>
             
         </switch>
