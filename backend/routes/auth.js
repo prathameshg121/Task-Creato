@@ -40,7 +40,7 @@ const jwt = require("jsonwebtoken");
 const router = express.Router();
 
 router.post("/signup", (req, res, next) => {
-    console.log("signup : "+ res);
+    // console.log("signup : "+ res);
     bcrypt.hash(req.body.password, 10).then(hash => {
       const user = new User({
         email: req.body.email,
@@ -60,7 +60,7 @@ router.post("/signup", (req, res, next) => {
               message: "Error Creating USer"
             })
           }
-          console.log('signup result : '+ result);
+          // console.log('signup result : '+ result);
           res.status(201).json({
             message: "User created!",
             result: result
@@ -79,7 +79,7 @@ router.post("/signup", (req, res, next) => {
 
   router.post("/login", (req, res, next) => {
     let fetchedUser;
-    console.log("login email :"+req.body.email);
+    // console.log("login email :"+req.body.email);
     User.findOne({email:req.body.email}).then(user=>{
       if(!user){
         return res.status(401).json({
@@ -87,10 +87,10 @@ router.post("/signup", (req, res, next) => {
         })
       }
       fetchedUser=user;
-      console.log('user : '+user);
+      // console.log('user : '+user);
       return bcrypt.compare(req.body.password, user.password);
     }).then(result=>{
-      console.log(fetchedUser)
+      // console.log(fetchedUser)
       if(!result){
         return res.status(401).json({
           message: "Auth failed inccorect password"

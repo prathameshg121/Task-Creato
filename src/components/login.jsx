@@ -8,12 +8,10 @@ export default function Login(proc) {
     const [islogin, setlogin] = useState(false);
     const histor = useHistory();
 
-    useEffect(()=>{
+    useEffect((histor)=>{
         if(localStorage.getItem("jwtToken")){
-            setlogin((prev)=>{
-                return true;
-            });
-            histor.push("./notes");
+            setlogin(true);
+            // histor.push("./notes");
         }
         proc.checkLogin(islogin);
     },islogin);
@@ -45,6 +43,7 @@ export default function Login(proc) {
             const token  = response.data.token;
             console.log('token'+response.data.token + 'roken'+ token);
             localStorage.setItem("jwtToken", token);
+            localStorage.setItem("userId", response.data.userId);
             setAuthToken(token);
             setlogin((prev)=>{
                 return true;
