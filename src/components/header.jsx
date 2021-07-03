@@ -1,4 +1,4 @@
-import React, { useState } from "react"
+import React, { useState, useContext, useEffect } from "react";
 import BorderColorTwoToneIcon from '@material-ui/icons/BorderColorTwoTone';
 import Zoom from '@material-ui/core/Zoom';
 import AlarmAddTwoToneIcon from '@material-ui/icons/AlarmAddTwoTone';
@@ -9,7 +9,7 @@ import {
     Link,useHistory
   } from "react-router-dom";
 import Login from "./login";
-import {Signup} from "./signup";
+import Signup from "./signup";
 import Clock from "./clock";
 import NotesArea from "./notesArea";
 import {Card, Form,Button,Navbar,} from 'react-bootstrap'
@@ -21,7 +21,7 @@ import LogoutIcon from '@material-ui/icons/ExitToApp';
 import AddAlertOutlinedIcon from '@material-ui/icons/AddAlertOutlined';
 import AccountCircleOutlinedIcon from '@material-ui/icons/AccountCircleOutlined';
 import Profile from  "./profile";
-
+import { AuthContext } from '../context/auth-context';
 
 
 function Heading(proc){
@@ -29,6 +29,7 @@ function Heading(proc){
     const [page, setPage]=useState("./index")
     const [isLogin , setLogin] = useState(false);
     let histor = useHistory();
+    const auth = useContext(AuthContext);
     function display( value){
      
         setLogin(value);
@@ -37,8 +38,13 @@ function Heading(proc){
         console.log("logout called");
         localStorage.removeItem("jwtToken");
         setLogin(false);
+        auth.logout();
         histor.push('/login');
     };
+    useEffect(()=>{
+        console.log("auth Login"+auth.isLoggedIn);
+        if(auth.isLoggedIn || localStorage.getItem('jwtToken')) setLogin(true); else setLogin(false);
+    },[isLogin])
     
     return( 
 
