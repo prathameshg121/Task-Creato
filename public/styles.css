@@ -15,9 +15,8 @@
   
   header {
     background-color: #3ff8e9;
-    position: fixed;
-    width: 100%;
-    margin: auto ;
+    
+    margin: auto -16px;
     padding: 0px 5px 4px 5px;
     box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.3);
      box-shadow: 0 1px 10px rgb(24, 165, 184)
@@ -34,7 +33,7 @@
   
   
   footer {
-    
+    position: absolute;
     margin-bottom: 15px;
     text-align: center;
     bottom: 0;
