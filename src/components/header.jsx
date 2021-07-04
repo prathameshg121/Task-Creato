@@ -85,7 +85,7 @@ function Heading(proc){
             <Route path="/notes">
                 <NotesArea checkLogin = {display} socket={proc.socket}/>
             </Route>
-            <Route path = "/home">
+            <Route exact path = "/">
                 <Home checkLogin = {display}/>
             </Route>
             <Route path = "/profile">

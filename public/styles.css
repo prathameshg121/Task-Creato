@@ -14,10 +14,13 @@
   }
   
   header {
-    background-color: #3ff8e9;;
-    margin: auto -16px;
+    background-color: #3ff8e9;
+    position: fixed;
+    width: 100%;
+    margin: auto ;
     padding: 0px 5px 4px 5px;
     box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.3);
+     box-shadow: 0 1px 10px rgb(24, 165, 184)
     
   }
   
@@ -29,8 +32,9 @@
  
   }
   
+  
   footer {
-    position: absolute;
+    
     margin-bottom: 15px;
     text-align: center;
     bottom: 0;
@@ -200,4 +204,57 @@
     margin-left: 10px;
     color: black;
 
+  }
+
+
+  /* home section  */
+  .banner{
+    background : white;
+    width: 100%;
+    height: 500px;
+    background:#3ff8e9;
+    padding: 15px;
+   
+    text-align: center;
+  }
+  .banner h1{
+    color: white;
+    font-size: 450%;
+    margin-top: 10%;
+    
+  }
+
+  .banner button{
+    border-radius: 5px;
+      background: transparent;
+    color: white;
+    border: solid 1px white;
+    text-decoration:none;
+    cursor:pointer;
+    font-size:1.2em;
+    padding:18px 10px;
+    width:180px;
+    margin: 10px;
+     outline: none
+    
+  }
+  .banner button:hover{
+    
+    background: white;
+    border: solid12px  white;
+    color: #3ff8e9;
+  }
+  .productInfo{
+    background : white;
+    width: 100%;
+    height: auto;
+    padding: 70px;
+  }
+  .productInfo h3{
+    font-family: 'cursive';
+   color: rgb(2, 28, 103);
+   font-size: 22px;
+  }
+  .productInfo p{
+    padding : 3px 0 10px 0;
   }
