@@ -1,17 +1,19 @@
-import React,{useState, useEffect} from 'react'
+import React,{useState, useEffect, useContext} from 'react'
 import {Button} from '@material-ui/core';
 import { BrowserRouter as Router , Switch,Route , Link , useHistory} from 'react-router-dom';
 import Home from './Home';
 import Axios from 'axios';
+import { AuthContext } from '../context/auth-context';
+
 
 export default function Login(proc) {
     const [islogin, setlogin] = useState(false);
     const histor = useHistory();
-
-    useEffect((histor)=>{
-        if(localStorage.getItem("jwtToken")){
+    const auth = useContext(AuthContext);
+    useEffect(()=>{
+        if(localStorage.getItem("jwtToken")  || auth.isLoggedIn ){
             setlogin(true);
-            // histor.push("./notes");
+            histor.push("./notes");
         }
         proc.checkLogin(islogin);
     },islogin);
@@ -38,8 +40,8 @@ export default function Login(proc) {
          .then(response => {
              console.log('Response :'+JSON.stringify(response));
              console.log('login sucessfull');
-             histor.push('/home');
-            //  auth.login(response.data.userId, response.data.token);
+             histor.push('/notes');
+             auth.login(response.data.userId, response.data.token);
             const token  = response.data.token;
             console.log('token'+response.data.token + 'roken'+ token);
             localStorage.setItem("jwtToken", token);
