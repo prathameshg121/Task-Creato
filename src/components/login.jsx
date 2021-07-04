@@ -1,17 +1,23 @@
-import React,{useState} from 'react'
+import React,{useState, useEffect, useContext} from 'react'
 import {Button} from '@material-ui/core';
 import { BrowserRouter as Router , Switch,Route , Link , useHistory} from 'react-router-dom';
 import Home from './Home';
 import Axios from 'axios';
+import { AuthContext } from '../context/auth-context';
+
 
 export default function Login(proc) {
     const [islogin, setlogin] = useState(false);
     const histor = useHistory();
-    function goToHome (){
-        proc.checkLogin(true);
-        histor.push("./home")
-    }
-
+    const auth = useContext(AuthContext);
+    useEffect(()=>{
+        if(localStorage.getItem("jwtToken")  || auth.isLoggedIn ){
+            setlogin(true);
+            histor.push("./home");
+        }
+        proc.checkLogin(islogin);
+    },islogin);
+    
     const [data, setData] =useState({
         email: "",
         password : ""
@@ -32,14 +38,18 @@ export default function Login(proc) {
          event.preventDefault();
          Axios.post('/auth/login', data)
          .then(response => {
-             console.log(response);
+             console.log('Response :'+JSON.stringify(response));
              console.log('login sucessfull');
-             history.push('/home');
-            //  auth.login(response.data.userId, response.data.token);
+             histor.push('/notes');
+             auth.login(response.data.userId, response.data.token);
             const token  = response.data.token;
             console.log('token'+response.data.token + 'roken'+ token);
             localStorage.setItem("jwtToken", token);
+            localStorage.setItem("userId", response.data.userId);
             setAuthToken(token);
+            setlogin((prev)=>{
+                return true;
+            })
         //  }).then(data => {
         //      let profile = data.data.profile.username
         //      localStorage.setItem(
@@ -57,23 +67,12 @@ export default function Login(proc) {
      function changehandler(event){
         let nam = event.target.name;
         let val = event.target.value;
-        switch(nam){
-            case 'email': 
-                setData({
-                    email:val,
-                    password: data.password
-                });
-                break;
-            case 'password': 
-                setData({
-                    email:data.email,
-                    password:val
-                });
-                break;
-            default:
-                 break;
-                
-        }
+        setData(predata=>{
+            return{
+                ...predata,
+                [nam]:val
+            }
+        })
 
      }
     return (
@@ -82,9 +81,9 @@ export default function Login(proc) {
            
             <div className="inputeArea">
             <h2>Login</h2>
-            <input className="inputeplace" type="email" placeholder="email" ></input>
-           <input className="inputeplace" type="password" placeholder="password" required="required"  ></input> 
-          <Button  type="submit" variant="contained" color="primary" onClick={ goToHome}  >Login</Button>
+            <input className="inputeplace" type="email" name='email' value={data.email} placeholder="email" onChange={changehandler} ></input>
+           <input className="inputeplace" type="password" placeholder="password" required="required" name='password' value={data.password} onChange={changehandler} ></input> 
+          <Button  type="submit" variant="contained" color="primary" onClick={ submitData }  >Login</Button>
             </div>
         </form>    
         </div>
