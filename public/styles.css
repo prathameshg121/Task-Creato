@@ -266,3 +266,13 @@
   .productInfo p{
     padding : 3px 0 10px 0;
   }
+/* 
+  ------------------------- */
+
+  /* :hover feature */
+
+  .addbtn :hover{
+
+    color: white;
+    cursor:pointer;
+  }

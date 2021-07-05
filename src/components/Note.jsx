@@ -17,9 +17,9 @@ function handelDelete(){
     <p>{prop.content}</p>
     </div>
      
-      <button onClick={handelDelete}>
+    <dfn title="delet">  <button onClick={handelDelete}>
           <DeleteIcon/>
-      </button>
+      </button></dfn>
       <br/>
    
       {/* <p>{prop.reminder}</p> */}

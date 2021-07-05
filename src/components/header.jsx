@@ -56,15 +56,15 @@ function Heading(proc){
     
         {isLogin ? <ul >
             <li><img className="logimag" src={imageLogo}></img></li>
-            <li className="poductList"><Link to ="/notes"><Add/> </Link></li>
-         <li className="poductList"><Link to = "/clock">  <AddAlertOutlinedIcon/> </Link>  </li>
-         <li className="poductList"><Link to = "/profile">  <AccountCircleOutlinedIcon/> </Link>  </li>
-        <li className="poductList" ><LogoutIcon onClick={logout}></LogoutIcon></li>
+            <li className="poductList"><Link to ="/notes"><dfn title="Add Notes"><Add className="addbtn"/></dfn> </Link></li>
+         <li className="poductList"><Link to = "/clock"> <dfn title="Add alarm"> <AddAlertOutlinedIcon className="addbtn" /></dfn> </Link>  </li>
+         <li className="poductList"><Link to = "/profile"> <dfn title="Profile"> <AccountCircleOutlinedIcon className="addbtn"/></dfn> </Link>  </li>
+        <li className="poductList" > <dfn title="Logout"><LogoutIcon onClick={logout}  style={{color :"#0000FF"}} className="addbtn" /></dfn></li>
         </ul> :
           <ul> 
           <li><img className="logimag" src={imageLogo}></img></li>
-          <li className="linav"><Link   to="/login"><h3>Signin</h3></Link></li>
-          <li className="linav"><Link to="/signUp"><h3>Sign Up</h3></Link> </li>
+          <li className="linav"><Link   to="/login"><dfn title="Sign in"><h3>Signin</h3></dfn></Link></li>
+          <li className="linav"><Link to="/signUp"><dfn title="Sign up"><h3>Sign Up</h3></dfn></Link> </li>
 
          </ul>}
     
