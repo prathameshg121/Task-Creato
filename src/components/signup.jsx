@@ -113,7 +113,7 @@ class Signup extends Component {
             return <Redirect to={this.state.redirect} />
         }
     return (
-        <div>
+        <div className="outer">
         <form>
             <div className="inputeArea">
                 <h2>Sign Up</h2>

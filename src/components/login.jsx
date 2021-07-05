@@ -76,7 +76,7 @@ export default function Login(proc) {
 
      }
     return (
-        <div>
+        <div className ="outer">
              <form>
            
             <div className="inputeArea">

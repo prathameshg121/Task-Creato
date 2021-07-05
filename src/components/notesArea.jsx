@@ -72,6 +72,7 @@ import { AuthContext } from '../context/auth-context';
     
       }
     return (
+      <div className="outer">
         <div className="notesAreaDiv">
       
       <MakeNote callData={getData} calleData={geteData} socket={proc.socket}/>
@@ -87,6 +88,7 @@ import { AuthContext } from '../context/auth-context';
       //  console.log(JSON.stringify(getnote[0]));
         return <Notes key={getnote._id} id={getnote._id} title={getnote.title} content={getnote.content}  onDelete={deleteItem}/>})
      } </div>
+        </div>
         </div>
     )
 }
