@@ -64,7 +64,8 @@ function Heading(proc){
           <ul> 
           <li><img className="logimag" src={imageLogo}></img></li>
           <li className="linav"><Link   to="/login"><h3>Signin</h3></Link></li>
-          <li className="linav"><Link to="/signUp"><h3>Signup</h3></Link> </li>
+          <li className="linav"><Link to="/signUp"><h3>Sign Up</h3></Link> </li>
+
          </ul>}
     
     
@@ -84,14 +85,11 @@ function Heading(proc){
             <Route path="/notes">
                 <NotesArea checkLogin = {display} socket={proc.socket}/>
             </Route>
-            <Route path = "/home">
+            <Route exact path = "/">
                 <Home checkLogin = {display}/>
             </Route>
             <Route path = "/profile">
                 <Profile checkLogin = {display}/>
-            </Route>
-            <Route path = "/">
-                <Home checkLogin = {display}/>
             </Route>
             
         </switch>

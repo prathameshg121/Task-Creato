@@ -13,7 +13,7 @@ export default function Login(proc) {
     useEffect(()=>{
         if(localStorage.getItem("jwtToken")  || auth.isLoggedIn ){
             setlogin(true);
-            histor.push("./notes");
+            histor.push("./home");
         }
         proc.checkLogin(islogin);
     },islogin);
