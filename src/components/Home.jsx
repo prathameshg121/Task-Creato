@@ -6,7 +6,7 @@ export default function Home(proc) {
     proc.checkLogin(true);
    
     return (
-        <div>
+        <div style={{baground :"white", width:"100%",height :"100%"}} >
 
    
         <div className="banner" >
