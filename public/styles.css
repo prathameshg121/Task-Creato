@@ -33,7 +33,7 @@
   
   
   footer {
-    position: absolute;
+    position: fixed;
     margin-bottom: 15px;
     text-align: center;
     bottom: 0;
@@ -57,37 +57,46 @@
   
   
   }
+  /* note section */
   .note {
     background: #fff;
     border-radius: 7px;
     box-shadow: 0 2px 5px #ccc;
     padding: 10px;
-    width: 240px;
-    margin: 16px;
-    float: left;
+    width: 70%;
+    height: auto;
+    margin: auto;
+    text-align: left;
+    display: inline-block;
+   
+ 
   }
-  .note h1 {
+  .note div
+{
+  width: 95%;
+  word-wrap:break-word;
+}  .note h1 {
     font-size: 1.1em;
     margin-bottom: 6px;
   }
   .note p {
     font-size: 1.1em;
     margin-bottom: 10px;
-    white-space: pre-wrap;
-    word-wrap: break-word;
+    
+ 
   }
   
   .note button {
-    position: absolute;
-    float: right;
-    margin-right: 10px;
+    padding: 3px;
+    float : right;
     color: #f5ba13;
     border: none;
     width: 36px;
     height: 36px;
-    cursor: pointer;
-    outline: none;
+   
   }
+
+  /* close -------- */
   .notesAreaDiv{
     text-align: center;
     margin-top: 30px;
