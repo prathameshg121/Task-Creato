@@ -1,8 +1,10 @@
 import { Button } from 'bootstrap';
 import React from 'react'
+import { useHistory } from 'react-router-dom';
 
 export default function Home(proc) {
     proc.checkLogin(true);
+   
     return (
         <div>
 
