@@ -27,7 +27,7 @@ import { AuthContext } from '../context/auth-context';
 function Heading(proc){
 
     const [page, setPage]=useState("./index")
-    const [isLogin , setLogin] = useState(false);
+    const [isLogin , setLogin] = useState(!!localStorage.getItem('jwtToken'));
     let histor = useHistory();
     const auth = useContext(AuthContext);
     function display( value){
@@ -44,7 +44,7 @@ function Heading(proc){
     useEffect(()=>{
         console.log("auth Login"+auth.isLoggedIn);
         if(auth.isLoggedIn || localStorage.getItem('jwtToken')) setLogin(true); else setLogin(false);
-    },[isLogin])
+    },[auth.isLoggedIn])
     
     return( 
 
