@@ -17,7 +17,7 @@ function handelDelete(){
     <p>{prop.content}</p>
     </div>
      
-    <dfn title="delet">  <button onClick={handelDelete}>
+    <dfn title="delete">  <button onClick={handelDelete}>
           <DeleteIcon/>
       </button></dfn>
       <br/>

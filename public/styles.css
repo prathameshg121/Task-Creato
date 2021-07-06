@@ -18,7 +18,7 @@
     position: fixed;
     width: 100%;
     top : 0;
-    padding: 0px 5px 4px 5px;
+    padding: 0px 5px 0px 5px;
     margin-top: 0;
      box-shadow: 0 1px 10px  rgb(24, 165, 184)
     
@@ -45,10 +45,10 @@
   footer p {
     color: #ccc;
   }
-  ul {
+ header ul {
     list-style-type: none;
    margin-right: 150px;
-   padding: 15px;
+   padding: 15px 15px 2px 0;
    text-align: right;
   }
 
@@ -225,49 +225,77 @@
 
 
   /* home section  */
+
+  .homeContainer{
+    display: inline-flex;
+    background-color: white;
+    width: 100%;
+    padding-top:60px ;
+  }
   .banner{
     background : white;
-    width: 100%;
+    width: 70%;
     height: 500px;
-  
+    margin-top: 10px;
     padding: 15px;
    
     text-align: center;
   }
   .banner h1{
     color: #3ff8e9;
-    font-size: 450%;
-    margin-top: 10%;
-    
+    font-size: 400%;
+    margin-top: 10%; 
+
   }
+  .banner h3{
+    color: gray;
+    font-size: 80%;
+  }
+  .featureicon{
+    color: rgb(228, 159, 56);
+    font-size: 4rem;
+  }
+
 
   .banner button{
     border-radius: 5px;
       background: transparent;
-    color: white;
-    border: solid 1px white;
+    color: #3ff8e9;
+    border: solid 1px #3ff8e9;
     text-decoration:none;
     cursor:pointer;
     font-size:1.2em;
-    padding:18px 10px;
-    width:180px;
-    margin: 10px;
+    padding:13px 8px;
+    width:auto;
+    margin: 20px;
      outline: none
     
   }
   .banner button:hover{
     
-    background: white;
+    background:#3ff8e9;
     border: solid12px  white;
-    color: #3ff8e9;
+    color: white;
+  }
+  .proImg{
+    margin-top: 14px;
+   width: auto;
+   height: auto;
+  }
+ 
+  .feature{
+   padding: 1px 90px 1px 90px;
+    width: 33%;
   }
   .productInfo{
-   background-color: #0195ff;
+   background-color: #9fdaff;
     width: 100%;
     height: auto;
     padding: 70px;
-
+    display: inline-flex;
+    text-align: center;
   }
+ 
   .productInfo h3{
     font-family: 'cursive';
    color: rgb(2, 28, 103);
@@ -275,7 +303,27 @@
   }
   .productInfo p{
     padding : 3px 0 10px 0;
+    color: gray;
   }
+
+
+  .carousel-item{
+    padding: 7% 15%;
+  }
+  #spon{
+    text-align: center;
+    background-color: rgb(118, 115, 115);
+    color: black;
+  }
+  .testimonial-image{
+    height: 70px;
+    width: 70px;
+    border-radius: 100%;
+    margin: 20px;
+    border-color: white;
+    border-width: 2px;
+  }
+
 /* 
   ------------------------- */
 
@@ -285,4 +333,61 @@
 
     color: white;
     cursor:pointer;
+  }
+
+  table {
+    margin: 20px auto;
+    text-align:  left;
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 30%;
+  }
+  
+  td, th {
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 2px;
+  }
+
+
+  .modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    padding-top: 100px; /* Location of the box */
+    left: 0;
+    top: 0;
+    width: 50%;
+    height: 50%; 
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+  }
+  
+  /* Modal Content */
+  .modal-content {
+    background-color: #fefefe;
+    margin: auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+   
+  }
+  .modal-content p{
+    color: black;
+  }
+  
+  /* The Close Button */
+  .close {
+    color: #aaaaaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+  }
+  
+  .close:hover,
+  .close:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
   }
