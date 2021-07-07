@@ -121,7 +121,7 @@ function goToHome() {
 
         </header></Zoom>
         </nav>
-        <switch>
+        <Switch>
             <Route path="/login">
                 <Login checkLogin = {display}/>
             </Route>
@@ -140,9 +140,9 @@ function goToHome() {
             <Route path = "/profile">
                 <Profile checkLogin = {display}/>
             </Route>
-            <Route component={PageNotFound} />
+            <Route  component={PageNotFound} ></Route>
             
-        </switch>
+        </Switch>
     </div>
     </Router>);
         
