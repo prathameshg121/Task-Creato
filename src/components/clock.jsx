@@ -10,8 +10,8 @@ import AlarmOffIcon from '@material-ui/icons/AlarmOff';
 
 function Clock(proc){
   proc.checkLogin(true);
-    const [display,setDisplay] = useState(false)
-    const [displayDate, setDisplayDate] =useState(false)
+    const [display,setDisplay] = useState(true)
+    const [displayDate, setDisplayDate] =useState(true)
     let time = new Date().toLocaleTimeString();
     var [t, refresh] = useState(time);
     function getTime() {

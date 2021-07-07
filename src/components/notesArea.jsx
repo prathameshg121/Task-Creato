@@ -13,6 +13,8 @@ import { AuthContext } from '../context/auth-context';
     //  proc.checkLogin(true);
     const [data,setData]=useState([]);
     const [edata,seteData]=useState([]);
+    const [webedata,setwebeData]=useState([]);
+
     const auth = useContext(AuthContext);
     const histor = useHistory();
     useEffect(()=>{
@@ -20,6 +22,7 @@ import { AuthContext } from '../context/auth-context';
         histor.push('/login');
       }
     },[auth.isLoggedIn]);
+    
     useEffect(prev=>{
       if(localStorage.getItem('jwtToken')){
           Axios.get('/notes/mynote').then(Ndata=>{
@@ -27,14 +30,43 @@ import { AuthContext } from '../context/auth-context';
             var notes = Ndata.data.notes;
             setData(prev=>{
               return notes;
-            });
+              });
           }
-      }).catch(e => {
+          }).catch(e => {
+              console.log("error:");
+              console.log(e);
+          });
+          Axios.get('/encrypt/notes/mynote').then(Ndata=>{
+            if(Ndata){
+              var notes = Ndata.data.notes;
+              console.log(JSON.stringify(notes));
+              setwebeData(notes);
+                           
+            }
+          }).catch(e => {
           console.log("error:");
           console.log(e);
-      });
+          });
+
+          
     } else histor.push('/login');
     },[]);
+
+    function getwebeData(){
+      if(localStorage.getItem('jwtToken')){
+        if(sessionStorage.getItem('SECRET')!=null && sessionStorage.getItem('SECRET')!=''){
+          webedata.map((enote)=>{
+            console.log(JSON.stringify(enote));
+            geteData(enote);
+
+          });
+        } else{
+            var modal = document.getElementById("myModal");
+            modal.style.display = "block";
+          console.log("Set Secret first!");
+        }
+      } else histor.push('/login');
+    };
 
     function getData(Ndata){
     setData(prev=>{
@@ -42,7 +74,8 @@ import { AuthContext } from '../context/auth-context';
     })};
     
     function geteData(Ndata){
-      const ddata = JSON.parse(decrypt({'iv':Ndata.title,'content':Ndata.content}));
+      console.log("Ndata :" + JSON.stringify(Ndata));
+      const ddata = JSON.parse(decrypt(Ndata.title.toString()));
       const decrpdata = {
         ...Ndata,
         'title': ddata.title,
@@ -57,25 +90,43 @@ import { AuthContext } from '../context/auth-context';
       const url = '/notes/'+id;
       Axios.delete(url).then(res=>{
         // console.log('delete res : '+ JSON.stringify(res));
-      }
-
-      ).catch(e=>{
+      }).catch(e=>{
         console.log("error : "+ JSON.stringify(e));
       });
       console.log("delet is added")
-    setData(prev =>{
-
-      return prev.filter((notes) =>{
-        return notes._id!==id
+      setData(prev =>{
+          return prev.filter((notes) =>{
+          return notes._id!==id
+        })
       })
-    })
-    
-      }
+    };
+    function deleteEItem(id){
+      const url = 'encrypt/notes/'+id;
+      Axios.delete(url).then(res=>{
+        // console.log('delete res : '+ JSON.stringify(res));
+      }).catch(e=>{
+        console.log("error : "+ JSON.stringify(e));
+      });
+      console.log("delet is added")
+      seteData(prev =>{
+          return prev.filter((notes) =>{
+          return notes._id!==id
+        })
+      })
+    };
     return (
       <div className="outer">
         <div className="notesAreaDiv">
       
       <MakeNote callData={getData} calleData={geteData} socket={proc.socket}/>
+      <div ></div>
+     <h1 onClick={getwebeData}>Encrypted</h1>
+     <div>{
+      edata.map( (getnote) =>{
+      //  console.log(JSON.stringify(getnote[0]));
+        return <Notes key={getnote._id} id={getnote._id} title={getnote.title} content={getnote.content}  onDelete={deleteEItem}/>})
+     } </div>
+     <h1>Common</h1>
      
      <div>{
       data.map( (getnote) =>{
@@ -83,11 +134,7 @@ import { AuthContext } from '../context/auth-context';
         return <Notes key={getnote._id} id={getnote._id} title={getnote.title} content={getnote.content}  onDelete={deleteItem}/>})
      }</div>
      <Divider variant="middle"/>
-     <div>{
-      edata.map( (getnote) =>{
-      //  console.log(JSON.stringify(getnote[0]));
-        return <Notes key={getnote._id} id={getnote._id} title={getnote.title} content={getnote.content}  onDelete={deleteItem}/>})
-     } </div>
+   
         </div>
         </div>
     )

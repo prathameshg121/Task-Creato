@@ -166,45 +166,60 @@ function encrptData(data){
 
 
 function submitData(event){
+  event.preventDefault();
   console.log('submitMessage :'+JSON.stringify(messages));
   if(isEncrypted){
+    setEncrypt(false);
     const hash = encrypt(JSON.stringify({'title':data.title,'content':data.content}));
     const edata = {
-      'title':hash.iv,
-      'content':hash.content
+      'title':hash,
+      'content':hash
     };
     Axios.post("/encrypt/notes/create", edata).then(resdata => {
-    console.log("data:"+JSON.stringify(resdata.data.note._doc));
-    // if (socket) {
-    //   socket.emit("notedata", {
-    //     chatroomId,
-    //     message: {"notedata":resdata.data.note._doc,"sender":senderId}
-    //   });
-    // }
-  }).catch(e => {
+      console.log("data:"+JSON.stringify(resdata.data.note._doc));
+      // if (socket) {
+      //   socket.emit("notedata", {
+      //     chatroomId,
+      //     message: {"notedata":resdata.data.note._doc,"sender":senderId}
+      //   });
+      // }
+      proc.calleData(resdata.data.note._doc);
+    }).catch(e => {
        console.log("error:");
        console.log(e);
     });
+  } else {
+      Axios.post("/notes/create", data).then(resdata => {
+        // console.log("data:"+JSON.stringify(resdata.data.note._doc));
+        proc.callData(resdata.data.note._doc);
+        if (socket) {
+          socket.emit("notedata", {
+            chatroomId,
+            message: {"notedata":resdata.data.note._doc,"sender":senderId}
+          });
+        }
+      }).catch(e => {
+          console.log("error:");
+          console.log(e);
+        });
   }
-  Axios.post("/notes/create", data).then(resdata => {
-    // console.log("data:"+JSON.stringify(resdata.data.note._doc));
-    proc.callData(resdata.data.note._doc);
-    if (socket) {
-      socket.emit("notedata", {
-        chatroomId,
-        message: {"notedata":resdata.data.note._doc,"sender":senderId}
-      });
-    }
-  }).catch(e => {
-       console.log("error:");
-       console.log(e);
-    });
     setData({
       title: "",
       content : "" ,
       reminder : ""
     });
     event.preventDefault()
+}
+
+function onEncryption(event){
+  if(sessionStorage.getItem('SECRET')!=null && sessionStorage.getItem('SECRET')!='' ){
+    setEncrypt(true);
+  } else {
+    console.log("Please Set Password for encryption");
+    var modal = document.getElementById("myModal");
+    modal.style.display = "block";
+  }
+
 }
 
 function increaseSize(){
@@ -233,7 +248,7 @@ function reminder (timeData){
         <Zoom in= {display}>
         <div>
        <dfn title="Add reminder"> <Fab  onClick={()=>{setReminder(!showReminder)}} ><AddAlertOutlinedIcon/> </Fab></dfn>
-       <dfn title="Add Encrution"> <Fab  onClick={()=>{setEncrypt(true)}}><EnhancedEncryptionIcon/>  </Fab> </dfn>
+       <dfn title="Add Encrution"> <Fab  onClick={onEncryption}><EnhancedEncryptionIcon/>  </Fab> </dfn>
         <dfn title="save"><Fab type="submit" onClick={submitData}><PostAddIcon/>  </Fab> </dfn>
 
         </div>
