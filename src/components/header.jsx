@@ -80,7 +80,7 @@ function Heading(proc) {
   return (
     <Router>
       <div>
-        <nav>
+        
           <header className="nameOfApp">
             <nav class="navbar bg navbar-expand-lg navbar-dark">
               <a class="navbar-brand" href="">
@@ -185,7 +185,7 @@ function Heading(proc) {
               </div>
             </nav>
           </header>
-        </nav>
+     
         <Switch>
           <Route path="/login">
             <Login checkLogin={display} />
