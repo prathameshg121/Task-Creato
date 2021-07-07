@@ -75,6 +75,7 @@ function App() {
     localStorage.removeItem('jwtToken');
     localStorage.removeItem('userId');
     localStorage.removeItem('profileData');
+    sessionStorage.removeItem('SECRET');
     let token = null
     Axios.defaults.headers.common['Authorization'] = `Bearer ${token}`;
 

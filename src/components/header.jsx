@@ -94,7 +94,7 @@ window.onclick = function(event) {
 }
 }
 function goToHome() {
-    histor.push("/")
+    histor.push("/");
 }
     
     return( 
@@ -106,7 +106,7 @@ function goToHome() {
         
     
         {isLogin ? <ul >
-            <li><dfn title="Task Creato"><img className="logimag" src={imageLogo}  onClick={goToHome}></img></dfn><h3  className="productName">Task Creato</h3></li>
+            <li><Link to = "/"><dfn title="Task Creato"><img className="logimag" src={imageLogo}  onClick={goToHome}></img></dfn><h3  className="productName">Task Creato</h3></Link></li>
             <li className="poductList"><Link to ="/notes"><dfn title="Add Notes"><Add className="addbtn"/></dfn> </Link></li>
          <li className="poductList"><Link to = "/clock"> <dfn title="Add alarm"> <AddAlertOutlinedIcon className="addbtn" /></dfn> </Link>  </li>
          <li className="poductList" > <dfn title="Encrytion"><EnhancedEncryptionIcon id="myBtn"  onClick={dialog} style={{color :"#0000FF"}} className="addbtn" /></dfn>
@@ -127,7 +127,7 @@ function goToHome() {
        
         </ul> :
           <ul> 
-          <li ><img className="logimag" src={imageLogo}></img><h3 className="productName">Task Creato</h3></li>
+          <li ><Link to = "/"><dfn title="Task Creato"><img className="logimag" src={imageLogo}></img><h3 className="productName">Task Creato</h3></dfn></Link></li>
           <li className="linav"><Link   to="/login"><dfn title="Sign in"><h3>Signin</h3></dfn></Link></li>
           <li className="linav"><Link to="/signUp"><dfn title="Sign up"><h3>Sign Up</h3></dfn></Link> </li>
 

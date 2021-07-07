@@ -55,7 +55,7 @@ import { AuthContext } from '../context/auth-context';
     },[]);
 
     function getwebeData(){
-      settogle(false);
+      if(togle) settogle(false); else settogle(true);
       if(localStorage.getItem('jwtToken')){
         if(sessionStorage.getItem('SECRET')!=null && sessionStorage.getItem('SECRET')!=''){
           webedata.map((enote)=>{
@@ -128,7 +128,7 @@ import { AuthContext } from '../context/auth-context';
                 return <Notes key={getnote._id} id={getnote._id} title={getnote.title} content={getnote.content}  onDelete={deleteEItem}/>})
                 }</div>}
             </div>
-            <div><button onClick={()=>{settogle(true)}} className="typeOfDataBtn">Common</button></div>
+            <div><button onClick={()=>{if(togle) settogle(false); else settogle(true);}} className="typeOfDataBtn">Common</button></div>
               {togle?<div>{
                   data.map( (getnote) =>{
                     return <Notes key={getnote._id} id={getnote._id} title={getnote.title} content={getnote.content}  onDelete={deleteItem}/>})

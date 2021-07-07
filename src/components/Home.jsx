@@ -1,7 +1,7 @@
 import { Button } from 'bootstrap';
 import React from 'react'
-import { useHistory } from 'react-router-dom';
-import Login from "./login"
+import { Link } from 'react-router-dom';
+import Login from "./login";
 import homeImg from "./images/homeImg.jpg"
 import b1 from "./images/brand1.png"
 import b2 from "./images/brand2.jpg"
@@ -24,7 +24,7 @@ export default function Home(proc) {
         <div className="banner" >
          <h1>Task Reminder</h1>
         <h3>Simplest way to chek list</h3>
-        <button > Get Started</button>
+        <Link to="/notes"><button > Get Started</button></Link>
         </div>
         
         <div className="proImg">
