@@ -76,6 +76,14 @@ import { AuthContext } from '../context/auth-context';
         <div className="notesAreaDiv">
       
       <MakeNote callData={getData} calleData={geteData} socket={proc.socket}/>
+      <div ></div>
+     <h1>Encrypted</h1>
+     <div>{
+      edata.map( (getnote) =>{
+      //  console.log(JSON.stringify(getnote[0]));
+        return <Notes key={getnote._id} id={getnote._id} title={getnote.title} content={getnote.content}  onDelete={deleteItem}/>})
+     } </div>
+     <h1>Common</h1>
      
      <div>{
       data.map( (getnote) =>{
@@ -83,11 +91,7 @@ import { AuthContext } from '../context/auth-context';
         return <Notes key={getnote._id} id={getnote._id} title={getnote.title} content={getnote.content}  onDelete={deleteItem}/>})
      }</div>
      <Divider variant="middle"/>
-     <div>{
-      edata.map( (getnote) =>{
-      //  console.log(JSON.stringify(getnote[0]));
-        return <Notes key={getnote._id} id={getnote._id} title={getnote.title} content={getnote.content}  onDelete={deleteItem}/>})
-     } </div>
+   
         </div>
         </div>
     )

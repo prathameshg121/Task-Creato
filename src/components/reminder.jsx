@@ -69,7 +69,7 @@ function Reminder ( proc)
         } , difference)
 
        }
-      proc.getTimeData(data);
+    //   proc.getTimeData(data);
        event.preventDefault();
     }
 
