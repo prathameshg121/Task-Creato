@@ -22,6 +22,7 @@ import AddAlertOutlinedIcon from '@material-ui/icons/AddAlertOutlined';
 import AccountCircleOutlinedIcon from '@material-ui/icons/AccountCircleOutlined';
 import Profile from  "./profile";
 import { AuthContext } from '../context/auth-context';
+import EnhancedEncryptionIcon from '@material-ui/icons/EnhancedEncryption';
 
 
 function Heading(proc){
@@ -44,7 +45,38 @@ function Heading(proc){
     useEffect(()=>{
         console.log("auth Login"+auth.isLoggedIn);
         if(auth.isLoggedIn || localStorage.getItem('jwtToken')) setLogin(true); else setLogin(false);
-    },[auth.isLoggedIn])
+    });
+
+
+
+// When the user clicks the button, open the modal 
+function dialog(){ 
+    var modal = document.getElementById("myModal");
+
+    // Get the button that opens the modal
+    var btn = document.getElementById("myBtn");
+    
+    // Get the <span> element that closes the modal
+    var span = document.getElementsByClassName("close")[0];
+
+  modal.style.display = "block";
+
+
+
+// When the user clicks on <span> (x), close the modal
+if( modal.style.display = "block"){ 
+span.onclick = function() {
+  modal.style.display = "none";
+}
+}
+
+// // When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+  if (event.target == modal) {
+    modal.style.display = "none";
+  }
+}
+}
     
     return( 
 
@@ -56,15 +88,27 @@ function Heading(proc){
     
         {isLogin ? <ul >
             <li><img className="logimag" src={imageLogo}></img></li>
-            <li className="poductList"><Link to ="/notes"><Add/> </Link></li>
-         <li className="poductList"><Link to = "/clock">  <AddAlertOutlinedIcon/> </Link>  </li>
-         <li className="poductList"><Link to = "/profile">  <AccountCircleOutlinedIcon/> </Link>  </li>
-        <li className="poductList" ><LogoutIcon onClick={logout}></LogoutIcon></li>
+            <li className="poductList"><Link to ="/notes"><dfn title="Add Notes"><Add className="addbtn"/></dfn> </Link></li>
+         <li className="poductList"><Link to = "/clock"> <dfn title="Add alarm"> <AddAlertOutlinedIcon className="addbtn" /></dfn> </Link>  </li>
+         <li className="poductList" > <dfn title="Encrytion"><EnhancedEncryptionIcon id="myBtn"  onClick={dialog} style={{color :"#0000FF"}} className="addbtn" /></dfn>
+
+         <div id="myModal" class="modal">     
+<div class="modal-content">
+  <span class="close">&times;</span>
+  <p>Some text in the Modal..</p>
+</div>
+
+</div>
+
+         </li>
+         <li className="poductList"><Link to = "/profile"> <dfn title="Profile"> <AccountCircleOutlinedIcon className="addbtn"/></dfn> </Link>  </li>
+        <li className="poductList" > <dfn title="Logout"><LogoutIcon onClick={logout}  style={{color :"#0000FF"}} className="addbtn" /></dfn></li>
+       
         </ul> :
           <ul> 
           <li><img className="logimag" src={imageLogo}></img></li>
-          <li className="linav"><Link   to="/login"><h3>Signin</h3></Link></li>
-          <li className="linav"><Link to="/signUp"><h3>Sign Up</h3></Link> </li>
+          <li className="linav"><Link   to="/login"><dfn title="Sign in"><h3>Signin</h3></dfn></Link></li>
+          <li className="linav"><Link to="/signUp"><dfn title="Sign up"><h3>Sign Up</h3></dfn></Link> </li>
 
          </ul>}
     

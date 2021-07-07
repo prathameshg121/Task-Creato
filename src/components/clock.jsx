@@ -45,16 +45,16 @@ function showDate(){
 }
   
       
-    return <div className="clockArea" >
+    return  <div className="outer"><div className="clockArea" >
     
-       <TodayIcon color="primary"  onClick={showDate}/>
+       <dfn title="Date"><TodayIcon color="primary"  onClick={showDate}/></dfn>
        {displayDate?<h3>{date}  {monthNames[month]}  {year} {days[day]}</h3>:""}
        
        <hr></hr>
-       <h1>{t} {display ?   <AlarmOffIcon style={{ color: "#FF0000" }} onClick={showAlarm}/> :<AccessAlarmsIcon color="primary" onClick={showAlarm}/>}</h1>
+       <h1>{t} {display ?   <dfn title="close alarm"><AlarmOffIcon style={{ color: "#FF0000" }} onClick={showAlarm}/></dfn> : <dfn title="show alarm"><AccessAlarmsIcon color="primary" onClick={showAlarm}/></dfn>}</h1>
        {display?<Reminder/>:""}
 
-    </div>
+    </div></div>
 }
 
 export default Clock;

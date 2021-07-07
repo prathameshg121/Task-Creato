@@ -13,7 +13,7 @@ export default function Login(proc) {
     useEffect(()=>{
         if(localStorage.getItem("jwtToken")  || auth.isLoggedIn ){
             setlogin(true);
-            histor.push("./home");
+            histor.push("./notes");
         }
         proc.checkLogin(islogin);
     },islogin);
@@ -76,7 +76,7 @@ export default function Login(proc) {
 
      }
     return (
-        <div>
+        <div className ="outer">
              <form>
            
             <div className="inputeArea">

@@ -232,9 +232,9 @@ function reminder (timeData){
      
         <Zoom in= {display}>
         <div>
-        <Fab  onClick={()=>{setReminder(!showReminder)}} ><AddAlertOutlinedIcon/> </Fab>
-        <Fab  onClick={()=>{setEncrypt(true)}}><EnhancedEncryptionIcon/>  </Fab>
-        <Fab type="submit" onClick={submitData}><PostAddIcon/>  </Fab>
+       <dfn title="Add reminder"> <Fab  onClick={()=>{setReminder(!showReminder)}} ><AddAlertOutlinedIcon/> </Fab></dfn>
+       <dfn title="Add Encrution"> <Fab  onClick={()=>{setEncrypt(true)}}><EnhancedEncryptionIcon/>  </Fab> </dfn>
+        <dfn title="save"><Fab type="submit" onClick={submitData}><PostAddIcon/>  </Fab> </dfn>
 
         </div>
         </Zoom>

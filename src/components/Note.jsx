@@ -12,12 +12,18 @@ function handelDelete(){
 
   return (
     <div className="note">
-      <h1>{prop.title}</h1>
-      <p>{prop.content}</p>
-      {/* <p>{prop.reminder}</p> */}
-      <button onClick={handelDelete}>
+    <div className = "data">
+    <h1>{prop.title}</h1>
+    <p>{prop.content}</p>
+    </div>
+     
+    <dfn title="delete">  <button onClick={handelDelete}>
           <DeleteIcon/>
-      </button>
+      </button></dfn>
+      <br/>
+   
+      {/* <p>{prop.reminder}</p> */}
+      
     </div>
   );
 }

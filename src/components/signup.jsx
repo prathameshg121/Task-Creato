@@ -49,7 +49,7 @@ class Signup extends Component {
         }))
         Axios.post('/auth/signup', this.state.user).then(response => {
             console.log("Response"+response);
-            this.props.history.push('./login');
+            this.props.history.push('/login');
             this.setState({ redirect: "/login" });
 
 
@@ -113,7 +113,7 @@ class Signup extends Component {
             return <Redirect to={this.state.redirect} />
         }
     return (
-        <div>
+        <div className="outer">
         <form>
             <div className="inputeArea">
                 <h2>Sign Up</h2>
