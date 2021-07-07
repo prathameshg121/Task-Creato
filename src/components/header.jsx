@@ -23,7 +23,7 @@ import AccountCircleOutlinedIcon from '@material-ui/icons/AccountCircleOutlined'
 import Profile from  "./profile";
 import { AuthContext } from '../context/auth-context';
 import EnhancedEncryptionIcon from '@material-ui/icons/EnhancedEncryption';
-
+import PageNotFound from './invalidpage'
 
 function Heading(proc){
 
@@ -45,7 +45,7 @@ function Heading(proc){
     useEffect(()=>{
         console.log("auth Login"+auth.isLoggedIn);
         if(auth.isLoggedIn || localStorage.getItem('jwtToken')) setLogin(true); else setLogin(false);
-    },[isLogin])
+    })
 
 
 
@@ -77,6 +77,9 @@ window.onclick = function(event) {
   }
 }
 }
+function goToHome() {
+    histor.push("/")
+}
     
     return( 
 
@@ -87,26 +90,28 @@ window.onclick = function(event) {
         
     
         {isLogin ? <ul >
-            <li><img className="logimag" src={imageLogo}></img></li>
+            <li><dfn title="Task Creato"><img className="logimag" src={imageLogo}  onClick={goToHome}></img></dfn><h3  className="productName">Task Creato</h3></li>
             <li className="poductList"><Link to ="/notes"><dfn title="Add Notes"><Add className="addbtn"/></dfn> </Link></li>
          <li className="poductList"><Link to = "/clock"> <dfn title="Add alarm"> <AddAlertOutlinedIcon className="addbtn" /></dfn> </Link>  </li>
          <li className="poductList" > <dfn title="Encrytion"><EnhancedEncryptionIcon id="myBtn"  onClick={dialog} style={{color :"#0000FF"}} className="addbtn" /></dfn>
-
+{/* /////////////////////////////////////////////////// */}
          <div id="myModal" class="modal">     
-<div class="modal-content">
+<div class="modalcontent">
   <span class="close">&times;</span>
-  <p>Some text in the Modal..</p>
+  <p>Set password for Encryption and Decryption..</p>
+  <input type="password"></input>
+  <button type="submit">set</button>
 </div>
 
 </div>
-
+{/* ///////////////////////////// */}
          </li>
          <li className="poductList"><Link to = "/profile"> <dfn title="Profile"> <AccountCircleOutlinedIcon className="addbtn"/></dfn> </Link>  </li>
         <li className="poductList" > <dfn title="Logout"><LogoutIcon onClick={logout}  style={{color :"#0000FF"}} className="addbtn" /></dfn></li>
        
         </ul> :
           <ul> 
-          <li><img className="logimag" src={imageLogo}></img></li>
+          <li ><img className="logimag" src={imageLogo}></img><h3 className="productName">Task Creato</h3></li>
           <li className="linav"><Link   to="/login"><dfn title="Sign in"><h3>Signin</h3></dfn></Link></li>
           <li className="linav"><Link to="/signUp"><dfn title="Sign up"><h3>Sign Up</h3></dfn></Link> </li>
 
@@ -116,7 +121,7 @@ window.onclick = function(event) {
 
         </header></Zoom>
         </nav>
-        <switch>
+        <Switch>
             <Route path="/login">
                 <Login checkLogin = {display}/>
             </Route>
@@ -135,8 +140,9 @@ window.onclick = function(event) {
             <Route path = "/profile">
                 <Profile checkLogin = {display}/>
             </Route>
+            <Route  component={PageNotFound} ></Route>
             
-        </switch>
+        </Switch>
     </div>
     </Router>);
         

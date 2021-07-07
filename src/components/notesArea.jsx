@@ -76,7 +76,11 @@ import { AuthContext } from '../context/auth-context';
         <div className="notesAreaDiv">
       
       <MakeNote callData={getData} calleData={geteData} socket={proc.socket}/>
+      <div className="typeOfData" >
+        <div><button className="typeOfDataBtn">Encrypted</button></div>
+        <div><button className="typeOfDataBtn">Common</button></div>
      
+     </div>
      <div>{
       data.map( (getnote) =>{
       //  console.log(JSON.stringify(getnote[0]));
