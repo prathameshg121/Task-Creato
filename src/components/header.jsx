@@ -23,7 +23,7 @@ import AccountCircleOutlinedIcon from '@material-ui/icons/AccountCircleOutlined'
 import Profile from  "./profile";
 import { AuthContext } from '../context/auth-context';
 import EnhancedEncryptionIcon from '@material-ui/icons/EnhancedEncryption';
-
+import PageNotFound from './invalidpage'
 
 function Heading(proc){
 
@@ -140,6 +140,7 @@ function goToHome() {
             <Route path = "/profile">
                 <Profile checkLogin = {display}/>
             </Route>
+            <Route component={PageNotFound} />
             
         </switch>
     </div>
