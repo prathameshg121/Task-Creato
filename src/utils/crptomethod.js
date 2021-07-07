@@ -2,7 +2,7 @@ const crypto = require('crypto');
 const CryptoJS = require('crypto-js');
 
 const algorithm = 'aes-256-ctr';
-const secretKey =  sessionStorage.getItem('SECRET').toString() || 'vOVHdf';
+const secretKey =  sessionStorage.getItem('SECRET')?.toString() || 'vOVHdf';
 const iv = crypto.randomBytes(16);
 
 const encrypt = (text) => {

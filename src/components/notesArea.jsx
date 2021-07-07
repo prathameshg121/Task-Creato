@@ -14,6 +14,8 @@ import { AuthContext } from '../context/auth-context';
     const [data,setData]=useState([]);
     const [edata,seteData]=useState([]);
     const [webedata,setwebeData]=useState([]);
+    const [togle,settogle]=useState(true);
+
 
     const auth = useContext(AuthContext);
     const histor = useHistory();
@@ -53,13 +55,14 @@ import { AuthContext } from '../context/auth-context';
     },[]);
 
     function getwebeData(){
+      settogle(false);
       if(localStorage.getItem('jwtToken')){
         if(sessionStorage.getItem('SECRET')!=null && sessionStorage.getItem('SECRET')!=''){
           webedata.map((enote)=>{
             console.log(JSON.stringify(enote));
             geteData(enote);
-
           });
+          setwebeData([]);
         } else{
             var modal = document.getElementById("myModal");
             modal.style.display = "block";
@@ -117,27 +120,25 @@ import { AuthContext } from '../context/auth-context';
     return (
       <div className="outer">
         <div className="notesAreaDiv">
-      
-      <MakeNote callData={getData} calleData={geteData} socket={proc.socket}/>
-      <div ></div>
-     <h1 onClick={getwebeData}>Encrypted</h1>
-     <div>{
-      edata.map( (getnote) =>{
-      //  console.log(JSON.stringify(getnote[0]));
-        return <Notes key={getnote._id} id={getnote._id} title={getnote.title} content={getnote.content}  onDelete={deleteEItem}/>})
-     } </div>
-     <h1>Common</h1>
-     
-     <div>{
-      data.map( (getnote) =>{
-      //  console.log(JSON.stringify(getnote[0]));
-        return <Notes key={getnote._id} id={getnote._id} title={getnote.title} content={getnote.content}  onDelete={deleteItem}/>})
-     }</div>
-     <Divider variant="middle"/>
-   
+          <MakeNote callData={getData} calleData={geteData} socket={proc.socket}/>
+          <div className="typeOfData" >
+            <div><button onClick={getwebeData} className="typeOfDataBtn">Encrypted</button></div>
+            <div>{togle?<div></div>:<div>{
+                edata.map( (getnote) =>{
+                return <Notes key={getnote._id} id={getnote._id} title={getnote.title} content={getnote.content}  onDelete={deleteEItem}/>})
+                }</div>}
+            </div>
+            <div><button onClick={()=>{settogle(true)}} className="typeOfDataBtn">Common</button></div>
+              {togle?<div>{
+                  data.map( (getnote) =>{
+                    return <Notes key={getnote._id} id={getnote._id} title={getnote.title} content={getnote.content}  onDelete={deleteItem}/>})
+                  }
+                </div>:<div></div> 
+              }
+          </div>
         </div>
-        </div>
+      </div>
     )
-}
+};
 // reminder={getnote.reminder}
 export default NotesArea;

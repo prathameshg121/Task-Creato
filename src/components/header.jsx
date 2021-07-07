@@ -23,7 +23,7 @@ import AccountCircleOutlinedIcon from '@material-ui/icons/AccountCircleOutlined'
 import Profile from  "./profile";
 import { AuthContext } from '../context/auth-context';
 import EnhancedEncryptionIcon from '@material-ui/icons/EnhancedEncryption';
-
+import PageNotFound from './invalidpage'
 
 function Heading(proc){
 
@@ -51,7 +51,6 @@ function Heading(proc){
 
 function changeSec(event){
     setSecret(event.target.value);
-    console.log("Event value"+event.target.value);
 };
 
 function onSubmitSec(event){
@@ -138,7 +137,7 @@ function goToHome() {
 
         </header></Zoom>
         </nav>
-        <switch>
+        <Switch>
             <Route path="/login">
                 <Login checkLogin = {display}/>
             </Route>
@@ -157,8 +156,9 @@ function goToHome() {
             <Route path = "/profile">
                 <Profile checkLogin = {display}/>
             </Route>
+            <Route  component={PageNotFound} ></Route>
             
-        </switch>
+        </Switch>
     </div>
     </Router>);
         
