@@ -1,4 +1,3 @@
-
 {
   "header": {
     "reportVersion": 1,
@@ -9,10 +8,7 @@
     "dumpEventTimeStamp": "1624444324611",
     "processId": 21040,
     "cwd": "f:\\chahat\\Skillup\\ToDoReminder\\backend",
-    "commandLine": [
-      "C:\\Program Files\\nodejs\\node.exe",
-      "index.js"
-    ],
+    "commandLine": ["C:\\Program Files\\nodejs\\node.exe", "index.js"],
     "nodejsVersion": "v12.16.1",
     "wordSize": 64,
     "arch": "x64",
@@ -142,9 +138,7 @@
   },
   "javascriptStack": {
     "message": "No stack.",
-    "stack": [
-      "Unavailable."
-    ]
+    "stack": ["Unavailable."]
   },
   "nativeStack": [
     {
@@ -383,8 +377,7 @@
       "writes": 6
     }
   },
-  "libuv": [
-  ],
+  "libuv": [],
   "environmentVariables": {
     "ALLUSERSPROFILE": "C:\\ProgramData",
     "APPDATA": "C:\\Users\\cw\\AppData\\Roaming",

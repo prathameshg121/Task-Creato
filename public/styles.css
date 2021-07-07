@@ -1,438 +1,404 @@
 * {
-    padding: 0;
-    margin: 0;
-    box-sizing: border-box;
-  }
-  html {
-    font-family: "Montserrat", sans-serif;
-  }
-  body {
-    background: #eee;
-    background-color: #c7fff6;
-    background-image: url("https://www.transparenttextures.com/patterns/candyhole.png");
-    /* This is mostly intended for prototyping; please download the pattern and re-host for production environments. Thank you! */
-  }
-  
-  header {
-    background-color: #3ff8e9;
-    position: fixed;
-    width: 100%;
-    top : 0;
-    padding: 0px 5px 0px 5px;
-    margin-top: 0;
-     box-shadow: 0 1px 10px  rgb(24, 165, 184)
-    
-  }
-  
-  header li {
-    display: inline;
-    color: #fff;
-    font-family: "McLaren", cursive;
-    font-weight: 200;
- 
-  }
-  
-  
-  footer {
-   
-    margin-bottom: 15px;
-    text-align: center;
-    bottom: 0;
-    width: 100%;
-    height: 2.5rem;
-  }
-  
-  footer p {
-    color: #ccc;
-  }
- header ul {
-    list-style-type: none;
-   margin-right: 150px;
-   padding: 15px 15px 2px 0;
-   text-align: right;
-  }
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+html {
+  font-family: 'Montserrat', sans-serif;
+}
+body {
+  background: #eee;
+  background-color: #c7fff6;
+  background-image: url('https://www.transparenttextures.com/patterns/candyhole.png');
+  /* This is mostly intended for prototyping; please download the pattern and re-host for production environments. Thank you! */
+}
 
-  .linav{
-    display: inline-block;
-    margin: 0px 15px;
-  
-  
-  }
-  /* note section */
-  .note {
-    background: #fff;
-    border-radius: 7px;
-    box-shadow: 0 2px 5px #ccc;
-    padding: 10px;
-    width: 70%;
-    height: auto;
-    margin: auto;
-    text-align: left;
-    display: inline-block;
-    margin-top: 15px;
- 
-  }
-  .note .data
-{
+header {
+  background-color: #3ff8e9;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  padding: 0px 5px 0px 5px;
+  margin-top: 0;
+  box-shadow: 0 1px 10px rgb(24, 165, 184);
+}
+
+header li {
+  display: inline;
+  color: #fff;
+  font-family: 'McLaren', cursive;
+  font-weight: 200;
+}
+
+footer {
+  margin-bottom: 15px;
+  text-align: center;
+  bottom: 0;
+  width: 100%;
+  height: 2.5rem;
+}
+
+footer p {
+  color: #ccc;
+}
+header ul {
+  list-style-type: none;
+  margin-right: 150px;
+  padding: 15px 15px 2px 0;
+  text-align: right;
+}
+
+.linav {
+  display: inline-block;
+  margin: 0px 15px;
+}
+/* note section */
+.note {
+  background: #fff;
+  border-radius: 7px;
+  box-shadow: 0 2px 5px #ccc;
+  padding: 10px;
+  width: 70%;
+  height: auto;
+  margin: auto;
+  text-align: left;
+  display: inline-block;
+  margin-top: 15px;
+}
+.note .data {
   width: 95%;
-  word-wrap:break-word;
-}  .note h1 {
-    font-size: 1.1em;
-    margin-bottom: 9px;
-  }
-  .note p {
-    font-size: 1.1em;
-    margin-bottom: 10px;
-    
- 
-  }
-  
-  .note button {
-    padding: 3px;
-    float : right;
-    color: #f5ba13;
-    border: none;
-    width: 36px;
-    height: 36px;
-    margin-right : 10px
-   
-  }
- 
+  word-wrap: break-word;
+}
+.note h1 {
+  font-size: 1.1em;
+  margin-bottom: 9px;
+}
+.note p {
+  font-size: 1.1em;
+  margin-bottom: 10px;
+}
 
+.note button {
+  padding: 3px;
+  float: right;
+  color: #f5ba13;
+  border: none;
+  width: 36px;
+  height: 36px;
+  margin-right: 10px;
+}
 
-  .typeOfData {
-    display: inline-flexbox;
-     }
-  .typeOfDataBtn{
-    color: #3ff8e9;
-    cursor: pointer;
-    background-color: white;
-    width: 75%;
-    border: 2px solid;
-    font: inherit;
-    line-height: 1;
-    margin: 0.5em;
-    padding: 1em 2em;
-    border-color: #3ff8e9 ;
-    border-radius: 5px;
-  }
-  .typeOfDataBtn:focus,
-  .typeOfDataBtn:hover{
-    background:#05d5c3;
-    border: solid12px  white;
-    color: white;
-  }
-  
-  /* close -------- */
-  .notesAreaDiv{
-    text-align: center;
-    margin-top: 30px;
-  }
-  form.create-note {
-  
-    width: 480px;
-    margin: 0 auto 20px auto;
-    background: #fff;
-    padding: 15px;
-    border-radius: 7px;
-    box-shadow: 0 1px 5px rgb(138, 137, 137);
-  }
-  form.create-note input,
-  form.create-note textarea {
-    width: 100%;
-    border: none;
-    padding: 4px;
-    outline: none;
-    font-size: 1.2em;
-    font-family: inherit;
-    resize: none;
-  }
-  form.create-note button {
-    bottom: -30px;
-    background: #f5ba13;
-    color: #fff;
-    border: none;
-    border-radius: 50%;
-    width: 36px;
-    margin-left: 15px;
-    height: 36px;
-    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
-    cursor: pointer;
-    outline: none;
-  }
-  
-  .Micon{
-    color:#00daf7;
-  }
-  .clockArea{
- 
-    width: 480px;
-    text-align: center;
-    margin: 30px auto 20px auto;
-    background: #fff;
-    padding: 15px;
-    border-radius: 7px;
-    box-shadow: 0 1px 10px rgb(90, 182, 194);
-  }
+.typeOfData {
+  display: inline-flexbox;
+}
+.typeOfDataBtn {
+  color: #3ff8e9;
+  cursor: pointer;
+  background-color: white;
+  width: 75%;
+  border: 2px solid;
+  font: inherit;
+  line-height: 1;
+  margin: 0.5em;
+  padding: 1em 2em;
+  border-color: #3ff8e9;
+  border-radius: 5px;
+}
+.typeOfDataBtn:focus,
+.typeOfDataBtn:hover {
+  background: #05d5c3;
+  border: solid12px white;
+  color: white;
+}
 
-  .outer{
-    padding: 16px;
-    margin-top: 80px;
-  }
+/* close -------- */
+.notesAreaDiv {
+  text-align: center;
+  margin-top: 30px;
+}
+form.create-note {
+  width: 480px;
+  margin: 0 auto 20px auto;
+  background: #fff;
+  padding: 15px;
+  border-radius: 7px;
+  box-shadow: 0 1px 5px rgb(138, 137, 137);
+}
+form.create-note input,
+form.create-note textarea {
+  width: 100%;
+  border: none;
+  padding: 4px;
+  outline: none;
+  font-size: 1.2em;
+  font-family: inherit;
+  resize: none;
+}
+form.create-note button {
+  bottom: -30px;
+  background: #f5ba13;
+  color: #fff;
+  border: none;
+  border-radius: 50%;
+  width: 36px;
+  margin-left: 15px;
+  height: 36px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+  cursor: pointer;
+  outline: none;
+}
 
+.Micon {
+  color: #00daf7;
+}
+.clockArea {
+  width: 480px;
+  text-align: center;
+  margin: 30px auto 20px auto;
+  background: #fff;
+  padding: 15px;
+  border-radius: 7px;
+  box-shadow: 0 1px 10px rgb(90, 182, 194);
+}
 
-  .inputeArea{
-   
-    width: 480px;
-    text-align: center;
-    margin: 20px auto 20px auto;
-    background: #fff;
-    padding: 15px;
-    border-radius: 7px;
-    box-shadow: 0 1px 10px rgb(24, 165, 184);
-  }
+.outer {
+  padding: 16px;
+  margin-top: 80px;
+}
 
-  .inputeplace{
-  
-    width: 450px;
-    margin: 30px auto 5px auto;
-    background: #fff;
-    padding: 15px;
-    border-radius: 7px;
-    box-shadow: 0 0px 0px rgb(32, 165, 165);
-  }
+.inputeArea {
+  width: 480px;
+  text-align: center;
+  margin: 20px auto 20px auto;
+  background: #fff;
+  padding: 15px;
+  border-radius: 7px;
+  box-shadow: 0 1px 10px rgb(24, 165, 184);
+}
 
- 
-  img{
-    width: 50px;
-    height: 50px;
-    margin: 0;
-    padding-bottom: 0;
-    
-    display: inline-block;
-  }
-  .addPara{
-    
-    color: wheat;
-    text-align: center;
-  }
- .logimag{
-   width: 40px;
-   height: 40px;
-   margin-left: 40px;
-   margin-top : 0px;
-   float: left;
-   box-shadow: black;
-   border: solid transparent;
-   border-radius: 50%;
-   border-width: 2px;
-   background: linear-gradient(180deg,#ffffff 1%, #ffffff 200% );
-   
- }
- .productName
-{
+.inputeplace {
+  width: 450px;
+  margin: 30px auto 5px auto;
+  background: #fff;
+  padding: 15px;
+  border-radius: 7px;
+  box-shadow: 0 0px 0px rgb(32, 165, 165);
+}
+
+img {
+  width: 50px;
+  height: 50px;
+  margin: 0;
+  padding-bottom: 0;
+
+  display: inline-block;
+}
+.addPara {
+  color: wheat;
+  text-align: center;
+}
+.logimag {
+  width: 40px;
+  height: 40px;
+  margin-left: 40px;
+  margin-top: 0px;
+  float: left;
+  box-shadow: black;
+  border: solid transparent;
+  border-radius: 50%;
+  border-width: 2px;
+  background: linear-gradient(180deg, #ffffff 1%, #ffffff 200%);
+}
+.productName {
   float: left;
   margin-left: 5px;
-  text-shadow:0 1px 10px #1602f1 ;
+  text-shadow: 0 1px 10px #1602f1;
 }
- 
 
-  .notesAreaDiv{
-    align-items: center;
-  }
+.notesAreaDiv {
+  align-items: center;
+}
 
-  .poductList{
-    display: inline-block;
-    padding-top: 5px;
-    margin: 0 20px;
-  }
+.poductList {
+  display: inline-block;
+  padding-top: 5px;
+  margin: 0 20px;
+}
 
-  .fabarea{
-    margin-left: 10px;
-    color: black;
+.fabarea {
+  margin-left: 10px;
+  color: black;
+}
 
-  }
+/* home section  */
 
+.homeContainer {
+  display: inline-flex;
+  background-color: white;
+  width: 100%;
+  padding-top: 60px;
+}
+.banner {
+  background: white;
+  width: 70%;
+  height: 500px;
+  margin-top: 10px;
+  padding: 15px;
 
-  /* home section  */
+  text-align: center;
+}
+.banner h1 {
+  color: #3ff8e9;
+  font-size: 400%;
+  margin-top: 10%;
+}
+.banner h3 {
+  color: gray;
+  font-size: 80%;
+}
+.featureicon {
+  color: rgb(228, 159, 56);
+  font-size: 4rem;
+}
 
-  .homeContainer{
-    display: inline-flex;
-    background-color: white;
-    width: 100%;
-    padding-top:60px ;
-  }
-  .banner{
-    background : white;
-    width: 70%;
-    height: 500px;
-    margin-top: 10px;
-    padding: 15px;
-   
-    text-align: center;
-  }
-  .banner h1{
-    color: #3ff8e9;
-    font-size: 400%;
-    margin-top: 10%; 
+.banner button {
+  border-radius: 5px;
+  background: transparent;
+  color: #3ff8e9;
+  border: solid 1px #3ff8e9;
+  text-decoration: none;
+  cursor: pointer;
+  font-size: 1.2em;
+  padding: 13px 8px;
+  width: auto;
+  margin: 20px;
+  outline: none;
+}
+.banner button:hover {
+  background: #3ff8e9;
+  border: solid12px white;
+  color: white;
+}
+.proImg {
+  margin-top: 14px;
+  width: auto;
+  height: auto;
+}
 
-  }
-  .banner h3{
-    color: gray;
-    font-size: 80%;
-  }
-  .featureicon{
-    color: rgb(228, 159, 56);
-    font-size: 4rem;
-  }
+.feature {
+  padding: 1px 90px 1px 90px;
+  width: 33%;
+}
+.productInfo {
+  background-color: #9fdaff;
+  width: 100%;
+  height: auto;
+  padding: 70px;
+  display: inline-flex;
+  text-align: center;
+}
 
+.productInfo h3 {
+  font-family: 'cursive';
+  color: rgb(2, 28, 103);
+  font-size: 22px;
+}
+.productInfo p {
+  padding: 3px 0 10px 0;
+  color: gray;
+}
 
-  .banner button{
-    border-radius: 5px;
-      background: transparent;
-    color: #3ff8e9;
-    border: solid 1px #3ff8e9;
-    text-decoration:none;
-    cursor:pointer;
-    font-size:1.2em;
-    padding:13px 8px;
-    width:auto;
-    margin: 20px;
-     outline: none
-    
-  }
-  .banner button:hover{
-    
-    background:#3ff8e9;
-    border: solid12px  white;
-    color: white;
-  }
-  .proImg{
-    margin-top: 14px;
-   width: auto;
-   height: auto;
-  }
- 
-  .feature{
-   padding: 1px 90px 1px 90px;
-    width: 33%;
-  }
-  .productInfo{
-   background-color: #9fdaff;
-    width: 100%;
-    height: auto;
-    padding: 70px;
-    display: inline-flex;
-    text-align: center;
-  }
- 
-  .productInfo h3{
-    font-family: 'cursive';
-   color: rgb(2, 28, 103);
-   font-size: 22px;
-  }
-  .productInfo p{
-    padding : 3px 0 10px 0;
-    color: gray;
-  }
-
-
-  .carousel-item{
-    padding: 7% 15%;
-  }
-  #spon{
-    text-align: center;
-    background-color: rgb(118, 115, 115);
-    color: black;
-  }
-  .testimonial-image{
-    height: 70px;
-    width: 70px;
-    border-radius: 100%;
-    margin: 20px;
-    border-color: white;
-    border-width: 2px;
-  }
+.carousel-item {
+  padding: 7% 15%;
+}
+#spon {
+  text-align: center;
+  background-color: rgb(118, 115, 115);
+  color: black;
+}
+.testimonial-image {
+  height: 70px;
+  width: 70px;
+  border-radius: 100%;
+  margin: 20px;
+  border-color: white;
+  border-width: 2px;
+}
 
 /* 
   ------------------------- */
 
-  /* :hover feature */
+/* :hover feature */
 
-  .addbtn :hover{
+.addbtn :hover {
+  color: white;
+  cursor: pointer;
+}
 
-    color: white;
-    cursor:pointer;
-  }
+table {
+  margin: 20px auto;
+  text-align: left;
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 30%;
+}
 
-  table {
-    margin: 20px auto;
-    text-align:  left;
-    font-family: arial, sans-serif;
-    border-collapse: collapse;
-    width: 30%;
-  }
-  
-  td, th {
-    border: 1px solid #dddddd;
-    text-align: left;
-    padding: 2px;
-  }
+td,
+th {
+  border: 1px solid #dddddd;
+  text-align: left;
+  padding: 2px;
+}
 
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  padding-top: 100px; /* Location of the box */
+  left: 0;
+  top: 0;
 
-  .modal {
-    display: none; /* Hidden by default */
-    position: fixed; /* Stay in place */
-    z-index: 1; /* Sit on top */
-    padding-top: 100px; /* Location of the box */
-    left: 0;
-    top: 0;
-  
-    width: 100%;
-    height: 100%; 
-    overflow: auto; /* Enable scroll if needed */
-    background-color: rgb(0,0,0); /* Fallback color */
-    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
-  }
-  
-  /* Modal Content */
-  .modalcontent {
-    background-color: #fefefe;
-    width: 30%;
-    height: 20%;
-    padding: 20px;
-    margin-left: 35%;
-    border: 1px solid #888;
-    text-align: left;
-   
-  }
-  .modalcontent p{
-    color: black;
-    
-  }
-  
-  /* The Close Button */
-  .close {
-    color: #aaaaaa;
-    float: right;
-    font-size: 28px;
-    font-weight: bold;
-  }
-  
-  .close:hover,
-  .close:focus {
-    color: #000;
-    text-decoration: none;
-    cursor: pointer;
-  }
+  width: 100%;
+  height: 100%;
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0, 0, 0); /* Fallback color */
+  background-color: rgba(0, 0, 0, 0.4); /* Black w/ opacity */
+}
 
-  .pageNotFound{
-    
-    background-color: white;
-   
-  }
-  .pageNotFound img{
-    z-index: 3;
-   width: 100%;
-   height: 100%;
-  }
+/* Modal Content */
+.modalcontent {
+  background-color: #fefefe;
+  width: 30%;
+  height: 20%;
+  padding: 20px;
+  margin-left: 35%;
+  border: 1px solid #888;
+  text-align: left;
+}
+.modalcontent p {
+  color: black;
+}
+
+/* The Close Button */
+.close {
+  color: #aaaaaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: #000;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.pageNotFound {
+  background-color: white;
+}
+.pageNotFound img {
+  z-index: 3;
+  width: 100%;
+  height: 100%;
+}
