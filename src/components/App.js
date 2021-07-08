@@ -25,7 +25,7 @@ function App() {
   const setupSocket = () => {
     const token = localStorage.getItem("jwtToken");
     if (token && !socket) {
-      const newSocket = io("http://localhost:8082", {
+      const newSocket = io("https://taskcreato-backend.herokuapp.com", {
         query: {
           token: localStorage.getItem("jwtToken"),
         },

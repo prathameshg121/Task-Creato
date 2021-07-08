@@ -134,11 +134,11 @@ function Heading(proc) {
                         />
                       </dfn>
                       {/* /////////////////////////////////////////////////// */}
-                      <div id="myModal" class="modal">
-                        <div class="modalcontent">
+                      <div id="myModal" class="modal ">
+                        <div class="modalcontent col-lg-4">
                           <span class="close">&times;</span>
                           <p>Set password for Encryption and Decryption..</p>
-                          <input type="password"></input>
+                          <input type="password" className="form-control"></input>
                           <button type="submit">set</button>
                         </div>
                       </div>

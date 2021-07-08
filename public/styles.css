@@ -17,13 +17,14 @@
     background-color: #3ff8e9;
     position: fixed;
     width: 100%;
+    z-index: 1;
     top : 0;
     padding: 0px 5px 0px 5px;
     margin-top: 0;
      box-shadow: 0 1px 10px  rgb(24, 165, 184)
     
   }
-  
+ 
   header li {
     display: inline;
     color: #fff;
@@ -255,7 +256,10 @@
 
 
   /* home section  */
-
+ #starter{
+   width: 100%;
+   background-color: white;
+ }
   .homeContainer{
     display: inline-flex;
     background-color: white;
@@ -264,7 +268,7 @@
   }
   .banner{
     background : white;
-    width: 70%;
+   
     height: 500px;
     margin-top: 10px;
     padding: 15px;
@@ -312,11 +316,32 @@
    width: auto;
    height: auto;
   }
+
+  .homeImg{
+    width: 80%;
+  height: 100%;
+    
+  }
  
-  .feature{
-   padding: 1px 90px 1px 90px;
+ 
+
+  .feature {
+    padding: 1px 90px 1px 90px;
     width: 33%;
   }
+  
+  #features{
+    width: 100%;
+    padding: 1px 90px 1px 90px;
+    text-align: center;
+    background-color: #9fdaff;
+   position: relative;
+
+  }
+  .features-class{
+    padding: 5%;
+  }
+
   .productInfo{
    background-color: #9fdaff;
     width: 100%;
@@ -342,6 +367,9 @@
   }
   #spon{
     text-align: center;
+    padding-top: 90px;
+    width: 100%;
+    height: auto;
     background-color: rgb(118, 115, 115);
     color: black;
   }
@@ -366,7 +394,7 @@
   }
 
   table {
-    margin: 20px auto;
+    margin: 100px auto 10px auto;
     text-align:  left;
     font-family: arial, sans-serif;
     border-collapse: collapse;
@@ -374,9 +402,9 @@
   }
   
   td, th {
-    border: 1px solid #dddddd;
+    
     text-align: left;
-    padding: 2px;
+    padding: 4px 15px;
   }
 
 
@@ -399,7 +427,7 @@
   .modalcontent {
     background-color: #fefefe;
     width: 30%;
-    height: 20%;
+    height: auto;
     padding: 20px;
     margin-left: 35%;
     border: 1px solid #888;
@@ -408,7 +436,6 @@
   }
   .modalcontent p{
     color: black;
-    
   }
   
   /* The Close Button */

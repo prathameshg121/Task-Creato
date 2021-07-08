@@ -4,7 +4,7 @@ import App from "./components/App";
 
 import axios from 'axios';
 
-axios.defaults.baseURL = 'http://localhost:8082/api';
+axios.defaults.baseURL = 'https://taskcreato-backend.herokuapp.com/api';
      
     let token =  localStorage.getItem("jwtToken") || '';
     
