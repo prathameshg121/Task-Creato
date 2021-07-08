@@ -80,7 +80,7 @@ function Heading(proc) {
   return (
     <Router>
       <div>
-        <nav>
+        
           <header className="nameOfApp">
             <nav class="navbar bg navbar-expand-lg navbar-dark">
               <a class="navbar-brand" href="">
@@ -134,11 +134,11 @@ function Heading(proc) {
                         />
                       </dfn>
                       {/* /////////////////////////////////////////////////// */}
-                      <div id="myModal" class="modal">
-                        <div class="modalcontent">
+                      <div id="myModal" class="modal ">
+                        <div class="modalcontent col-lg-4">
                           <span class="close">&times;</span>
                           <p>Set password for Encryption and Decryption..</p>
-                          <input type="password"></input>
+                          <input type="password" className="form-control"></input>
                           <button type="submit">set</button>
                         </div>
                       </div>
@@ -185,7 +185,7 @@ function Heading(proc) {
               </div>
             </nav>
           </header>
-        </nav>
+     
         <Switch>
           <Route path="/login">
             <Login checkLogin={display} />
