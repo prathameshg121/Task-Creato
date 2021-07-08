@@ -18,8 +18,8 @@ export default function Home(proc) {
 
   return (
     <div>
-      <div className="homeContainer">
-        <div className="banner">
+      <div className=" row homeContainer">
+        <div className=" col-lg-6 features-class banner">
           <h1>Task Reminder</h1>
           <h3>Simplest way to chek list</h3>
           <Link to="/notes">
@@ -27,34 +27,41 @@ export default function Home(proc) {
           </Link>
         </div>
 
-        <div className="proImg">
-          <img className="proImg" src={homeImg}></img>
+        <div className="col-lg-6 features-class proImg">
+          <img className="homeImg" src={homeImg}></img>
         </div>
       </div>
-      <div className="productInfo">
-        <div className="feature">
-          <i className=" featureicon fas fa-clipboard-list  "></i>
+
+    
+
+      <section id="features">
+<div class="row">
+
+<div class="col-lg-4 features-class ">
+
+<i className=" featureicon fas fa-clipboard-list  "></i>
           <h3>Create To Do list</h3>
           <p>Create list easily organize it on the basis of priority. </p>
-        </div>
-        <div className="feature">
-          <AlarmAddIcon
+</div>
+<div class="col-lg-4 features-class">
+<AlarmAddIcon
             style={{ fontSize: 70 }}
             className="featureicon "
             size="lg"
           />
           <h3>Add Reminder</h3>
           <p>Add the Reminder that will notify you and stay tune.</p>
-        </div>
-        <div className="feature ">
-          <EnhancedEncryptionIcon
+    </div>
+<div class="col-lg-4 features-class">
+<EnhancedEncryptionIcon
             style={{ fontSize: 70 }}
             className="featureicon"
           />
           <h3>Secure the data</h3>
           <p>As we respect others privacy, data is end to end encrypted.</p>
-        </div>
-      </div>
+    </div>
+</div>
+  </section>
 
       <div>
         <section id="spon">
