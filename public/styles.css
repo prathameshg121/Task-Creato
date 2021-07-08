@@ -76,162 +76,149 @@
   .note .data
 {
   width: 95%;
-  word-wrap:break-word;
-}  .note h1 {
-    font-size: 1.1em;
-    margin-bottom: 9px;
-  }
-  .note p {
-    font-size: 1.1em;
-    margin-bottom: 10px;
-    
- 
-  }
-  
-  .note button {
-    padding: 3px;
-    float : right;
-    color: #f5ba13;
-    border: none;
-    width: 36px;
-    height: 36px;
-    margin-right : 10px
-   
-  }
- 
+  word-wrap: break-word;
+}
+.note h1 {
+  font-size: 1.1em;
+  margin-bottom: 9px;
+}
+.note p {
+  font-size: 1.1em;
+  margin-bottom: 10px;
+}
 
+.note button {
+  padding: 3px;
+  float: right;
+  color: #f5ba13;
+  border: none;
+  width: 36px;
+  height: 36px;
+  margin-right: 10px;
+}
 
-  .typeOfData {
-    display: inline-flex;
-     }
-  .typeOfDataBtn{
-    color: #3ff8e9;
-    cursor: pointer;
-    background-color: white;
-   
-    border: 2px solid;
-    font: inherit;
-    line-height: 1;
-    margin: 0.5em;
-    padding: 1em 2em;
-    border-color: #3ff8e9 ;
-    border-radius: 5px;
-  }
-  .typeOfDataBtn:focus,
-  .typeOfDataBtn:hover{
-    background:#05d5c3;
-    border: solid12px  white;
-    color: white;
-  }
-  
-  /* close -------- */
-  .notesAreaDiv{
-    text-align: center;
-    margin-top: 30px;
-  }
-  form.create-note {
-  
-    width: 480px;
-    margin: 0 auto 20px auto;
-    background: #fff;
-    padding: 15px;
-    border-radius: 7px;
-    box-shadow: 0 1px 5px rgb(138, 137, 137);
-  }
-  form.create-note input,
-  form.create-note textarea {
-    width: 100%;
-    border: none;
-    padding: 4px;
-    outline: none;
-    font-size: 1.2em;
-    font-family: inherit;
-    resize: none;
-  }
-  form.create-note button {
-    bottom: -30px;
-    background: #f5ba13;
-    color: #fff;
-    border: none;
-    border-radius: 50%;
-    width: 36px;
-    margin-left: 15px;
-    height: 36px;
-    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
-    cursor: pointer;
-    outline: none;
-  }
-  
-  .Micon{
-    color:#00daf7;
-  }
-  .clockArea{
- 
-    width: 480px;
-    text-align: center;
-    margin: 30px auto 20px auto;
-    background: #fff;
-    padding: 15px;
-    border-radius: 7px;
-    box-shadow: 0 1px 10px rgb(90, 182, 194);
-  }
+.typeOfData {
+  display: inline-flexbox;
+}
+.typeOfDataBtn {
+  color: #3ff8e9;
+  cursor: pointer;
+  background-color: white;
+  width: 75%;
+  border: 2px solid;
+  font: inherit;
+  line-height: 1;
+  margin: 0.5em;
+  padding: 1em 2em;
+  border-color: #3ff8e9;
+  border-radius: 5px;
+}
+.typeOfDataBtn:focus,
+.typeOfDataBtn:hover {
+  background: #05d5c3;
+  border: solid12px white;
+  color: white;
+}
 
-  .outer{
-    padding: 16px;
-    margin-top: 80px;
-  }
+/* close -------- */
+.notesAreaDiv {
+  text-align: center;
+  margin-top: 30px;
+}
+form.create-note {
+  width: 480px;
+  margin: 0 auto 20px auto;
+  background: #fff;
+  padding: 15px;
+  border-radius: 7px;
+  box-shadow: 0 1px 5px rgb(138, 137, 137);
+}
+form.create-note input,
+form.create-note textarea {
+  width: 100%;
+  border: none;
+  padding: 4px;
+  outline: none;
+  font-size: 1.2em;
+  font-family: inherit;
+  resize: none;
+}
+form.create-note button {
+  bottom: -30px;
+  background: #f5ba13;
+  color: #fff;
+  border: none;
+  border-radius: 50%;
+  width: 36px;
+  margin-left: 15px;
+  height: 36px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+  cursor: pointer;
+  outline: none;
+}
 
+.Micon {
+  color: #00daf7;
+}
+.clockArea {
+  width: 480px;
+  text-align: center;
+  margin: 30px auto 20px auto;
+  background: #fff;
+  padding: 15px;
+  border-radius: 7px;
+  box-shadow: 0 1px 10px rgb(90, 182, 194);
+}
 
-  .inputeArea{
-   
-    width: 480px;
-    text-align: center;
-    margin: 20px auto 20px auto;
-    background: #fff;
-    padding: 15px;
-    border-radius: 7px;
-    box-shadow: 0 1px 10px rgb(24, 165, 184);
-  }
+.outer {
+  padding: 16px;
+  margin-top: 80px;
+}
 
-  .inputeplace{
-  
-    width: 450px;
-    margin: 30px auto 5px auto;
-    background: #fff;
-    padding: 15px;
-    border-radius: 7px;
-    box-shadow: 0 0px 0px rgb(32, 165, 165);
-  }
+.inputeArea {
+  width: 480px;
+  text-align: center;
+  margin: 20px auto 20px auto;
+  background: #fff;
+  padding: 15px;
+  border-radius: 7px;
+  box-shadow: 0 1px 10px rgb(24, 165, 184);
+}
 
- 
-  img{
-    width: 50px;
-    height: 50px;
-    margin: 0;
-    padding-bottom: 0;
-    
-    display: inline-block;
-  }
-  .addPara{
-    
-    color: wheat;
-    text-align: center;
-  }
- .logimag{
-   width: 40px;
-   height: 40px;
-   margin-left: 40px;
-   margin-top : 0px;
-   float: left;
-   box-shadow: black;
-   border: solid transparent;
-   border-radius: 50%;
-   border-width: 2px;
-   background: linear-gradient(180deg,#ffffff 1%, #ffffff 200% );
-   
- }
- .productName
-{
+.inputeplace {
+  width: 450px;
+  margin: 30px auto 5px auto;
+  background: #fff;
+  padding: 15px;
+  border-radius: 7px;
+  box-shadow: 0 0px 0px rgb(32, 165, 165);
+}
+
+img {
+  width: 50px;
+  height: 50px;
+  margin: 0;
+  padding-bottom: 0;
+
+  display: inline-block;
+}
+.addPara {
+  color: wheat;
+  text-align: center;
+}
+.logimag {
+  width: 40px;
+  height: 40px;
+  margin-left: 40px;
+  margin-top: 0px;
+  float: left;
+  box-shadow: black;
+  border: solid transparent;
+  border-radius: 50%;
+  border-width: 2px;
+  background: linear-gradient(180deg, #ffffff 1%, #ffffff 200%);
+}
+.productName {
   float: left;
   margin-left: 5px;
   text-shadow:0 1px 10px #1602f1 ;
