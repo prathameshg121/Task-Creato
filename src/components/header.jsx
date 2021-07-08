@@ -97,115 +97,110 @@ function Heading(proc) {
       <div>
         <nav>
           <Zoom in="true">
-            <header className="nameOfApp">
-              {isLogin ? (
-                <ul>
-                  <li>
-                    <Link to="/">
-                      <dfn title="Task Creato">
-                        <img
-                          className="logimag"
-                          src={imageLogo}
-                          onClick={goToHome}
-                        ></img>
-                      </dfn>
-                      <h3 className="productName">Task Creato</h3>
-                    </Link>
-                  </li>
-                  <li className="poductList">
-                    <Link to="/notes">
-                      <dfn title="Add Notes">
-                        <Add className="addbtn" />
-                      </dfn>{" "}
-                    </Link>
-                  </li>
-                  <li className="poductList">
-                    <Link to="/clock">
-                      {" "}
-                      <dfn title="Add alarm">
+          <header className="nameOfApp">
+            <nav class="navbar bg navbar-expand-lg navbar-dark">
+              <a class="navbar-brand" href="">
+                <dfn title="Task Creato">
+                  <img
+                    className="logimag"
+                    src={imageLogo}
+                    onClick={goToHome}
+                  ></img>
+                </dfn>
+                <h3 className="productName">Task Creato</h3>
+              </a>
+              <button
+                class="navbar-toggler  hambBtn"
+                type="button"
+                data-toggle="collapse"
+                data-target="#navbarSupportedContent"
+                aria-controls="navbarSupportedContent"
+                aria-expanded="false"
+                aria-label="Toggle navigation"
+              >
+                <span class="navbar-toggler-icon"></span>
+              </button>
+              <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                {isLogin ? (
+                  <ul class="navbar-nav ml-auto">
+                    <li className=" nav-item poductList nav-item">
+                      <Link to="/notes">
+                        <dfn title="Add Notes">
+                          <Add className="addbtn" />
+                        </dfn>{" "}
+                      </Link>
+                    </li>
+                    <li className="nav-item poductList">
+                      <Link to="/clock">
                         {" "}
-                        <AddAlertOutlinedIcon className="addbtn" />
-                      </dfn>{" "}
-                    </Link>{" "}
-                  </li>
-                  <li className="poductList">
-                    {" "}
-                    <dfn title="Encrytion">
-                      <EnhancedEncryptionIcon
-                        id="myBtn"
-                        onClick={dialog}
-                        style={{ color: "#0000FF" }}
-                        className="addbtn"
-                      />
-                    </dfn>
-                    {/* /////////////////////////////////////////////////// */}
-                    <div id="myModal" class="modal">
-                      <div class="modalcontent">
-                        <span class="close">&times;</span>
-                        <form>
-                          <p>Set secret for Encryption and Decryption..</p>
-                          <input
-                            type="password"
-                            name="secret"
-                            value={secret}
-                            placeholder="Enter your Secret !"
-                            onChange={changeSec}
-                          ></input>
-                          <button type="submit" onClick={onSubmitSec}>
-                            Set
-                          </button>
-                        </form>
+                        <dfn title="Add alarm">
+                          {" "}
+                          <AddAlertOutlinedIcon className="addbtn" />
+                        </dfn>{" "}
+                      </Link>{" "}
+                    </li>
+                    <li className=" nav-item poductList">
+                      {" "}
+                      <dfn title="Encrytion">
+                        <EnhancedEncryptionIcon
+                          id="myBtn"
+                          onClick={dialog}
+                          style={{ color: "#0000FF" }}
+                          className="addbtn"
+                        />
+                      </dfn>
+                      {/* /////////////////////////////////////////////////// */}
+                      <div id="myModal" class="modal ">
+                        <div class="modalcontent col-lg-4">
+                          <span class="close">&times;</span>
+                          <p>Set password for Encryption and Decryption..</p>
+                          <input type="password" className="form-control"></input>
+                          <button type="submit">set</button>
+                        </div>
                       </div>
-                    </div>
-                    {/* ///////////////////////////// */}
-                  </li>
-                  <li className="poductList">
-                    <Link to="/profile">
-                      {" "}
-                      <dfn title="Profile">
+                      {/* ///////////////////////////// */}
+                    </li>
+                    <li className="poductList nav-item">
+                      <Link to="/profile">
                         {" "}
-                        <AccountCircleOutlinedIcon className="addbtn" />
-                      </dfn>{" "}
-                    </Link>{" "}
-                  </li>
-                  <li className="poductList">
-                    {" "}
-                    <dfn title="Logout">
-                      <LogoutIcon
-                        onClick={logout}
-                        style={{ color: "#0000FF" }}
-                        className="addbtn"
-                      />
-                    </dfn>
-                  </li>
-                </ul>
-              ) : (
-                <ul>
-                  <li>
-                    <Link to="/">
-                      <dfn title="Task Creato">
-                        <img className="logimag" src={imageLogo}></img>
-                        <h3 className="productName">Task Creato</h3>
+                        <dfn title="Profile">
+                          {" "}
+                          <AccountCircleOutlinedIcon className="addbtn" />
+                        </dfn>{" "}
+                      </Link>{" "}
+                    </li>
+                    <li className="poductList nav-item">
+                      {" "}
+                      <dfn title="Logout">
+                        <LogoutIcon
+                          onClick={logout}
+                          style={{ color: "#0000FF" }}
+                          className="addbtn"
+                        />
                       </dfn>
-                    </Link>
-                  </li>
-                  <li className="linav">
-                    <Link to="/login">
-                      <dfn title="Sign in">
-                        <h3>Signin</h3>
-                      </dfn>
-                    </Link>
-                  </li>
-                  <li className="linav">
-                    <Link to="/signUp">
-                      <dfn title="Sign up">
-                        <h3>Sign Up</h3>
-                      </dfn>
-                    </Link>{" "}
-                  </li>
-                </ul>
-              )}
-            </header>
+                    </li>
+                  </ul>
+                ) : (
+                  <ul class="navbar-nav ml-auto">
+                    <li className="linav nav-item">
+                      <Link to="/login">
+                        <dfn title="Sign in">
+                          <h3>Signin</h3>
+                        </dfn>
+                      </Link>
+                    </li>
+                    <li className="linav nav-item">
+                      <Link to="/signUp">
+                        <dfn title="Sign up">
+                          <h3>Sign Up</h3>
+                        </dfn>
+                      </Link>{" "}
+                    </li>
+                  </ul>
+                )}
+              </div>
+            </nav>
+          </header>
           </Zoom>
         </nav>
         <Switch>
