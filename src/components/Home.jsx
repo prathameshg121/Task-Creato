@@ -17,9 +17,9 @@ export default function Home(proc) {
   // proc.checkLogin(true);
 
   return (
-    <div>
+    <div  className="homepage">
       <section id="starter">
-      <div className=" row homeContainer">
+      <div className=" row homeContainer w-100">
         <div className=" col-lg-6 features-class banner">
           <h1>Task Reminder</h1>
           <h3>Simplest way to chek list</h3>

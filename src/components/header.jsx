@@ -62,26 +62,23 @@ function Heading(proc) {
     event.preventDefault();
   }
 
-  // When the user clicks the button, open the modal
-  function dialog() {
+
+  function dialog(event) {
     var modal = document.getElementById("myModal");
 
-    // Get the button that opens the modal
     var btn = document.getElementById("myBtn");
 
-    // Get the <span> element that closes the modal
     var span = document.getElementsByClassName("close")[0];
 
     modal.style.display = "block";
 
-    // When the user clicks on <span> (x), close the modal
+   
     if ((modal.style.display = "block")) {
       span.onclick = function () {
         modal.style.display = "none";
       };
     }
 
-    // // When the user clicks anywhere outside of the modal, close it
     window.onclick = function (event) {
       if (event.target == modal) {
         modal.style.display = "none";
@@ -95,9 +92,9 @@ function Heading(proc) {
   return (
     <Router>
       <div>
-        <nav>
+      
           <Zoom in="true">
-          <header className="nameOfApp">
+          <header >
             <nav class="navbar bg navbar-expand-lg navbar-dark">
               <a class="navbar-brand" href="">
                 <dfn title="Task Creato">
@@ -202,7 +199,7 @@ function Heading(proc) {
             </nav>
           </header>
           </Zoom>
-        </nav>
+      
         <Switch>
           <Route path="/login">
             <Login checkLogin={display} />
