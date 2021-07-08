@@ -1,11 +1,12 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import App from "./components/App";
+
 import axios from 'axios';
 
-axios.defaults.baseURL = 'http://localhost:8082/api';
+axios.defaults.baseURL = 'https://taskcreato-backend.herokuapp.com/api';
      
-    let token =  JSON.parse(localStorage.getItem("jwtToken")) || '';
+    let token =  localStorage.getItem("jwtToken") || '';
     
     
     //axios.defaults.headers.common['Authorization'] = {'Authorization': `Bearer ${token}`};

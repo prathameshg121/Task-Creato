@@ -2,7 +2,7 @@ const mongoose = require("mongoose");
 
 const Schema = mongoose.Schema;
 
-const noteSchema = new Schema(
+const enoteSchema = new Schema(
     {
         title: { type: String, required: true, trim: true, minlength: 3 },
         content: { type: String, required: true, trim: true },
@@ -12,6 +12,6 @@ const noteSchema = new Schema(
     { timestamps: true }
 );
 
-const Note = mongoose.model("Note", noteSchema);
+const eNote = mongoose.model("eNote", enoteSchema);
 
-module.exports = Note;
+module.exports = eNote;

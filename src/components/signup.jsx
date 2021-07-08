@@ -1,16 +1,19 @@
 import React, { Component } from 'react'
 import { Button } from '@material-ui/core';
-import { BrowserRouter as Router , Link , Switch , Route, useHistory } from 'react-router-dom';
+import { BrowserRouter as Router , Link , Switch , Route, useHistory, withRouter } from 'react-router-dom';
+import { Redirect } from "react-router-dom";
+
 import Home from './Home';
 import Axios from 'axios';
 
 import validateForm from '../utils/validateform';
 import validEmailRegex from '../utils/emailRegex';
 //sign in
-export class Signup extends Component {
+class Signup extends Component {
     // var history = useHistory();
     constructor(props) {
         super(props)
+    console.log(props+"his"+props.history);
     this.state = {
         user: {
             email: '',
@@ -26,7 +29,8 @@ export class Signup extends Component {
         errors: {
             email: '',
             password: ''
-        }
+        },
+         redirect: null 
     };
 };
 
@@ -34,55 +38,24 @@ export class Signup extends Component {
         this.setState(pre => ({
             isloading: true
         }))
-        const auth = this.context
+        // const auth = this.context
         event.preventDefault();
 
         if (validateForm(this.state.errors)) {
         } else {
         }
-        if (this.state.isLoginMode) {
-            Axios.post('/auth/signup', this.state.user)
-                .then(response => {
-                    this.setState(pre => ({
-                        isloading: false
-                    }))
-                    this.props.history.push('/')
-                    auth.login(response.data.userId, response.data.token);
-                    return Axios.get('/profile/viewprofile')
-                }).then(data => {
-                    let profile = data.data.profile.username
-                    localStorage.setItem(
-                        'profileData',
-                        JSON.stringify({
-                            "username": profile
-                        }))
+        this.setState(pre => ({
+            isloading: true
+        }))
+        Axios.post('/auth/signup', this.state.user).then(response => {
+            console.log("Response"+response);
+            this.props.history.push('./login');
+            this.setState({ redirect: "/login" });
 
 
-                }).catch(e => {
-                    console.log("error e :" + e);
-                    this.setState({
-                        isloading: false,
-                        error: {
-                            ...this.state.error, message: e.response
-                            
-                        }
-                    });
-                })
-
-        }
-        else {
-            this.setState(pre => ({
-                isloading: true
-            }))
-            Axios.post('/auth/signup', this.state.user).then(response => {
-                this.setState(pre => ({
-                    isloading: false
-                }))
-            })
-                .catch(e => {
-                    this.setState({ error: true });
-                })
-        }
+        }).catch(e => {
+                this.setState({ error: true });
+        })
         this.setState({
             user: { ...this.state.user, email: '', password: '' }
         });
@@ -135,15 +108,12 @@ export class Signup extends Component {
         this.setState({ errors, user: { ...this.state.user, [nam]: val } }, () => {
         });
     };
-
-    // var switchLoginhandler = () => {
-    //     this.setState(pre => ({
-    //         isLoginMode: !pre.isLoginMode
-    //     }))
-    // };
     render (){
+        if (this.state.redirect) {
+            return <Redirect to={this.state.redirect} />
+        }
     return (
-        <div>
+        <div className="outer">
         <form>
             <div className="inputeArea">
                 <h2>Sign Up</h2>
@@ -159,4 +129,4 @@ export class Signup extends Component {
 }
 }
 
-
+export default withRouter(Signup);
