@@ -1,5 +1,5 @@
 <p align="center">
-  <a href="https://github.com/CHAHATMB/ToDoReminder">
+  <a href="https://github.com/prathameshg121/ToDoReminder">
     <img src="src/components/images/logo2.png" alt="Logo" width="80" height="80">
   </a>
 <h1 align="center">Task Creato</h1>
