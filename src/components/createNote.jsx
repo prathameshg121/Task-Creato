@@ -276,7 +276,7 @@ function CreateArea(proc) {
           onClick={increaseSize}
           onChange={makeChange}
           value={data.content}
-          placeholder="Discription..."
+          placeholder="Description..."
           rows={rowValue}
         />
 
