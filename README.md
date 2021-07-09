@@ -1,6 +1,6 @@
 <p align="center">
   <a href="https://github.com/CHAHATMB/ToDoReminder">
-    <img src="src/components/images" alt="Logo" width="80" height="80">
+    <img src="src/components/images/logo2.png" alt="Logo" width="80" height="80">
   </a>
 <h1 align="center">Task Creato</h1>
   <p align="center">
