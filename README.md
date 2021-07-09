@@ -52,9 +52,10 @@ To get a local copy up and running follow these simple example steps.
 ### 💻**Technology stack**
 Tools and technologies that you learnt and used in the project:
 1. MERN Stack
-2. Socket.io
-3. Crypto-js (JS lib for encryption and decryption)
-4. Git and Github
+2. Bootstrap
+3. Socket.io
+4. Crypto-js (JS lib for encryption and decryption)
+5. Git and Github
 
 ### ⚡**Applications**
 + You can use this app as a todo reminder for your task.  
