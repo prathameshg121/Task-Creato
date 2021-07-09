@@ -1,5 +1,5 @@
 <p align="center">
-  <a href="https://github.com/prathameshg121/ToDoReminder">
+  <a href="https://github.com/CHAHATMB/ToDoReminder">
     <img src="src/components/images/logo2.png" alt="Logo" width="80" height="80">
   </a>
 <h1 align="center">Task Creato</h1>
@@ -8,6 +8,9 @@
     <br /> 
     </p>
 </p>
+
+### Try the Live-Demo Here
+[Task Creato](http://todoreminderapp.herokuapp.com/)
     
 <!-- ABOUT THE PROJECT -->
 ## 📖About The Project
@@ -52,10 +55,9 @@ To get a local copy up and running follow these simple example steps.
 ### 💻**Technology stack**
 Tools and technologies that you learnt and used in the project:
 1. MERN Stack
-2. Bootstrap
-3. Socket.io
-4. Crypto-js (JS lib for encryption and decryption)
-5. Git and Github
+2. Socket.io
+3. Crypto-js (JS lib for encryption and decryption)
+4. Git and Github
 
 ### ⚡**Applications**
 + You can use this app as a todo reminder for your task.  
