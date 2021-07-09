@@ -1,74 +1,84 @@
-<<<<<<< HEAD
-# ToDoReminder
-=======
-# Getting Started with Create React App
+<p align="center">
+  <a href="https://github.com/CHAHATMB/ToDoReminder">
+    <img src="src/components/images/logo2.png" alt="Logo" width="80" height="80">
+  </a>
+<h1 align="center">Task Creato</h1>
+  <p align="center">
+    Easy to create secure notes and add reminder.
+    <br /> 
+    </p>
+</p>
+    
+<!-- ABOUT THE PROJECT -->
+## 📖About The Project
+Task Creato helps to create notes vesy esaily. It also has the feature of alarm. We implemented End-to-end encryption so that personal data remain secure. The website is responsive so it can we easily use on multiple devices.
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+It has feature of real time synchoronization across mutiple device.
 
-## Available Scripts
+### 🔧**Project Setup**  
 
-In the project directory, you can run:
+This project has two part - Frontend and Backend
+To get a local copy up and running follow these simple example steps.
 
-### `npm start`
+### Prerequisites
+ You need to have pre-installed npm (a Node package manager)
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+### Installation
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+1. Clone the repo
+   ```sh
+   git clone https://github.com/CHAHATMB/ToDoReminder
+   ```
+2. Install NPM packages
+   ```sh
+   npm install
+   ```
 
-### `npm test`
+### Run
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+1. To run Frontend
+   ```sh
+   npm run client
+   ```
+2. To run Backend
+   ```sh
+   npm run server
+   ```
+3. To run in Development mode
+   ```sh
+   npm run dev
+   ```
 
-### `npm run build`
+### 💻**Technology stack**
+Tools and technologies that you learnt and used in the project:
+1. MERN Stack
+2. Socket.io
+3. Crypto-js (JS lib for encryption and decryption)
+4. Git and Github
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### ⚡**Applications**
++ You can use this app as a todo reminder for your task.  
++ You can set remainder in order to get notification at specific time.  
++ You can use this app to store some of your confidential notes.   
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### 📸**Screenshots**
+<h3>
+Home page
+</h3>
+<img src="https://lh6.googleusercontent.com/4nPiuyPNIhZ7RBvpMrbqr_ZHgECk8Oz0gOWLvj-H7UfGSm7dntfGbWDU6ArbDMjNMpj-VbFAdr0qzXhjYTDd=w1366-h615" >
 
-### `npm run eject`
+</br>
+<a><h3>Reminder Page</h3><img src="https://lh4.googleusercontent.com/0UbEbO8VgXyY92t1TJ7FzF7dnToHrNbOsZ5zOFZ99p9u8jr5pjxLJUouYTFKhagjvI3yC6tKF80s36kGsP7b=w1366-h615" >
+</a>
+<a><h3>Add Note Page</h3><img src="https://lh6.googleusercontent.com/NkexwLMHrabER0vkez_AOhfq8wAE_p0w2fY-3EN6gmb3khyIcX70LhPNwyKDLSKQ_3lM7sZ1g9IRDipSj9DR=w1366-h615" >
+</a>
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+### 👨‍💻**Team members**
+* Chahat Baghele
+* Prathamesh Ghogare
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+<!-- LICENSE -->
+## License
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
->>>>>>> 296c19249ddd1a82395d3f5fbba7cd0a71c62c06
+Distributed under the MIT License. See `LICENSE` for more information.
