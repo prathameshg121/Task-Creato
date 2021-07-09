@@ -10,6 +10,7 @@ import b4 from "./images/brand4.jpg";
 import b5 from "./images/brand5.jpg";
 import b6 from "./images/brand6.png";
 import b8 from "./images/brand7.png";
+import LoopIcon from '@material-ui/icons/Loop';
 import AlarmAddIcon from "@material-ui/icons/AlarmAdd";
 import EnhancedEncryptionIcon from "@material-ui/icons/EnhancedEncryption";
 
@@ -38,13 +39,13 @@ export default function Home(proc) {
       <section id="features">
 <div class="row">
 
-<div class="col-lg-4 features-class ">
+<div class="col-lg-3 features-class ">
 
 <i className=" featureicon fas fa-clipboard-list  "></i>
           <h3>Create To Do list</h3>
           <p>Create list easily organize it on the basis of priority. </p>
 </div>
-<div class="col-lg-4 features-class">
+<div class="col-lg-3 features-class">
 <AlarmAddIcon
             style={{ fontSize: 70 }}
             className="featureicon "
@@ -53,13 +54,23 @@ export default function Home(proc) {
           <h3>Add Reminder</h3>
           <p>Add the Reminder that will notify you and stay tune.</p>
     </div>
-<div class="col-lg-4 features-class">
+<div class="col-lg-3 features-class">
 <EnhancedEncryptionIcon
             style={{ fontSize: 70 }}
             className="featureicon"
           />
           <h3>Secure the data</h3>
           <p>As we respect others privacy, data is end to end encrypted.</p>
+    </div>
+    <div class="col-lg-3 features-class">
+
+    <LoopIcon
+            style={{ fontSize: 70 }}
+            className="featureicon"
+          />
+          <h3>Real time data</h3>
+          <p>Data synchronization between multiple devices.</p>
+
     </div>
 </div>
   </section>
