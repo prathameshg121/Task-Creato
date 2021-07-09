@@ -69,9 +69,9 @@ Home page
 <img src="https://lh6.googleusercontent.com/4nPiuyPNIhZ7RBvpMrbqr_ZHgECk8Oz0gOWLvj-H7UfGSm7dntfGbWDU6ArbDMjNMpj-VbFAdr0qzXhjYTDd=w1366-h615" >
 
 </br>
-<a><h3>Reminder Page</h3><img src="https://lh4.googleusercontent.com/0UbEbO8VgXyY92t1TJ7FzF7dnToHrNbOsZ5zOFZ99p9u8jr5pjxLJUouYTFKhagjvI3yC6tKF80s36kGsP7b=w1366-h615" >
+<a><h3>Reminder Page</h3><img src="https://lh3.googleusercontent.com/yFvG_L6cd-1aq3zxeOZyzKNFiAXpWm7vmuEV5Px9VLVK-GiAYYAOsL19bmyJF4ryGq7eeKNWF9sdgeZfSKTD=w1366-h615" >
 </a>
-<a><h3>Add Note Page</h3><img src="https://lh6.googleusercontent.com/NkexwLMHrabER0vkez_AOhfq8wAE_p0w2fY-3EN6gmb3khyIcX70LhPNwyKDLSKQ_3lM7sZ1g9IRDipSj9DR=w1366-h615" >
+<a><h3>Add Note Page</h3><img src="https://lh3.googleusercontent.com/CctfBA6zET8onwA6C1naFFLbBOC5sZuW3DGFpBfkfTiQExot_7-jIcvA4yejNX20c61XkBnKt8kEoWIpaEwD=w1366-h615" >
 </a>
 
 ### 👨‍💻**Team members**
