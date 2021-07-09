@@ -66,12 +66,12 @@ Tools and technologies that you learnt and used in the project:
 <h3>
 Home page
 </h3>
-<img src="https://lh6.googleusercontent.com/4nPiuyPNIhZ7RBvpMrbqr_ZHgECk8Oz0gOWLvj-H7UfGSm7dntfGbWDU6ArbDMjNMpj-VbFAdr0qzXhjYTDd=w1366-h615" >
+<img src="src/components/images/home.png" >
 
 </br>
-<a><h3>Reminder Page</h3><img src="https://lh4.googleusercontent.com/0UbEbO8VgXyY92t1TJ7FzF7dnToHrNbOsZ5zOFZ99p9u8jr5pjxLJUouYTFKhagjvI3yC6tKF80s36kGsP7b=w1366-h615" >
+<a><h3>Reminder Page</h3><img src="src/components/images/reminder.png" >
 </a>
-<a><h3>Add Note Page</h3><img src="https://lh6.googleusercontent.com/NkexwLMHrabER0vkez_AOhfq8wAE_p0w2fY-3EN6gmb3khyIcX70LhPNwyKDLSKQ_3lM7sZ1g9IRDipSj9DR=w1366-h615" >
+<a><h3>Add Note Page</h3><img src="src/components/images/note.png" >
 </a>
 
 ### 👨‍💻**Team members**
