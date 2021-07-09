@@ -1,6 +1,6 @@
 <p align="center">
-  <a href="https://github.com/othneildrew/Best-README-Template">
-    <img src="https://raw.githubusercontent.com/prathameshg121/ToDoReminder/main/src/components/images/logo2.png?token=AO7X2DHNXNUHZPFZ3DZW63DA472M4" alt="Logo" width="80" height="80">
+  <a href="https://github.com/CHAHATMB/ToDoReminder">
+    <img src="src/components/images" alt="Logo" width="80" height="80">
   </a>
 <h1 align="center">Task Creato</h1>
   <p align="center">
