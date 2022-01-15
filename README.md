@@ -10,7 +10,7 @@
 </p>
 
 ### Try the Live-Demo Here
-[Task Creato](http://todoreminderapp.herokuapp.com/)
+[Task Creato](http://todoreminderapp.herokuapp.com)
     
 <!-- ABOUT THE PROJECT -->
 ## 📖About The Project
